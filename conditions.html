@@ -450,12 +450,13 @@
 
 <script>
 // ─────────────────────────────────────────────
-// CONFIG — swap these URLs with your published CSV tabs
+// CONFIG
 // ─────────────────────────────────────────────
+// Historic: "Tide and Flow" tab (low tides + OPW readings for past ~30 days)
 const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQDMorOFSKXuIzsxxJxV2BOjgYPWR9CvGwyAI6mb6-98JDQZvqm4Etn1zeyjrYwAXtN74H0GWHwxi_1/pub?gid=76164422&single=true&output=csv';
 
-// If you publish your future-tides tab, add its URL here:
-const FUTURE_TIDES_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQDMorOFSKXuIzsxxJxV2BOjgYPWR9CvGwyAI6mb6-98JDQZvqm4Etn1zeyjrYwAXtN74H0GWHwxi_1/pub?gid=1085754590&single=true&output=csv'; // e.g. '...pub?gid=XXXXXX&single=true&output=csv'
+// Future tides tab (predicted low tides for coming week)
+const FUTURE_TIDES_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQDMorOFSKXuIzsxxJxV2BOjgYPWR9CvGwyAI6mb6-98JDQZvqm4Etn1zeyjrYwAXtN74H0GWHwxi_1/pub?gid=1085754590&single=true&output=csv';
 
 // ─────────────────────────────────────────────
 // THRESHOLDS
@@ -511,19 +512,30 @@ function overallBadge(tideVal, opwVal) {
   return                         { label: 'Marginal', bg: '#fff8e1', fg: '#a06000' };
 }
 
-// Parse "12:49 AM 18-Feb" style datetimes
+// Parse datetime strings from the sheet
+// Handles formats like: "12:49 AM 18-Feb", "12:16 PM 18-Mar", "1:17 PM 18-Feb-2026"
 function parseDateTime(str) {
-  if (!str) return null;
-  // Try parsing various formats
-  let m = moment(str, ['h:mm A D-MMM', 'h:mm A DD-MMM', 'DD-MMM-YYYY', 'DD/MM/YYYY HH:mm'], true);
+  if (!str || !str.trim()) return null;
+  str = str.trim();
+
+  // Format: "12:16 PM 18-Mar" or "1:17 PM 18-Feb" (no year)
+  let m = moment(str, ['h:mm A D-MMM', 'h:mm A DD-MMM'], true);
   if (m.isValid()) {
-    // If no year in string, assume current year (or last year if date is in future by > 6 months)
-    if (!str.match(/\d{4}/)) {
-      m.year(moment().year());
-      if (m.diff(moment(), 'days') > 180) m.year(moment().year() - 1);
-    }
+    m.year(moment().year());
+    // If the date looks more than 6 months in the future, it's probably last year
+    if (m.diff(moment(), 'days') > 180) m.year(moment().year() - 1);
     return m.toDate();
   }
+
+  // Format with year: "12:16 PM 18-Mar-2026"
+  m = moment(str, ['h:mm A D-MMM-YYYY', 'h:mm A DD-MMM-YYYY'], true);
+  if (m.isValid()) return m.toDate();
+
+  // ISO or other standard formats
+  m = moment(str);
+  if (m.isValid()) return m.toDate();
+
+  console.warn('⚠ Could not parse datetime:', str);
   return null;
 }
 
@@ -753,13 +765,21 @@ function buildTideChart(rows, futureRows) {
     .filter(Boolean)
     .sort((a, b) => a.x - b.x);
 
-  // Future tides: if we have them use them; otherwise highlight upcoming from historic
+  // Future tides: columns are No, Date, Tide, Tide Times, Tide Height, Height Num, Datetime
   const futureData = futureRows
-    ? futureRows.map(r => {
-        const dt = parseDateTime(r['Datetime'] || r['Time'] || r['Date']);
-        const v  = parseFloat(r['Tide Height'] || r['Height']);
-        return dt && !isNaN(v) ? { x: dt, y: v } : null;
-      }).filter(Boolean).sort((a, b) => a.x - b.x)
+    ? futureRows
+        .filter(r => (r['Tide'] || '').toLowerCase() === 'low')
+        .map(r => {
+          const dt = parseDateTime(r['Datetime']);
+          const v  = parseFloat(r['Height Num']);
+          if (!dt || isNaN(v)) {
+            console.warn('⚠ Skipping future tide row — could not parse:', r);
+            return null;
+          }
+          return { x: dt, y: v };
+        })
+        .filter(Boolean)
+        .sort((a, b) => a.x - b.x)
     : historicData.filter(d => d.x >= now);
 
   if (!historicData.length) return;
@@ -987,26 +1007,34 @@ async function loadData() {
   errBox.style.display = 'none';
 
   try {
-    // Fetch main (historic) sheet
+    // Fetch main (historic / tide+flow) sheet
+    console.log('🔵 Fetching historic sheet:', SHEET_CSV_URL);
     const resp = await fetch(SHEET_CSV_URL);
-    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    console.log('🔵 Historic sheet response status:', resp.status);
+    if (!resp.ok) throw new Error(`HTTP ${resp.status} fetching main sheet`);
     const text = await resp.text();
+    console.log('🔵 Historic sheet raw (first 300 chars):', text.slice(0, 300));
     const rows = parseCSV(text);
+    console.log('🔵 Historic sheet parsed rows:', rows.length, '— first row:', rows[0]);
 
     if (!rows.length) throw new Error('No data rows found in sheet.');
 
     updateStatus(rows);
     buildOPWChart(rows);
 
-    // Fetch future tides if available
+    // Fetch future tides
     let futureRows = null;
     if (FUTURE_TIDES_CSV_URL) {
       try {
+        console.log('🟢 Fetching future tides:', FUTURE_TIDES_CSV_URL);
         const fr = await fetch(FUTURE_TIDES_CSV_URL);
+        console.log('🟢 Future tides response status:', fr.status);
         const ft = await fr.text();
+        console.log('🟢 Future tides raw (first 300 chars):', ft.slice(0, 300));
         futureRows = parseCSV(ft);
+        console.log('🟢 Future tides parsed rows:', futureRows.length, '— first row:', futureRows[0]);
       } catch (e) {
-        console.warn('Future tides fetch failed:', e);
+        console.warn('⚠ Future tides fetch failed:', e);
       }
     }
 
@@ -1015,10 +1043,10 @@ async function loadData() {
 
   } catch (err) {
     errBox.style.display = 'block';
-    errBox.textContent = `⚠ Could not load data: ${err.message}. The Google Sheet may need to be published as CSV, or there may be a network issue.`;
-    document.getElementById('opwLoading').innerHTML = '<p style="color:#888;padding:2rem">Data unavailable.</p>';
-    document.getElementById('tideLoading').innerHTML = '<p style="color:#888;padding:2rem">Data unavailable.</p>';
-    console.error(err);
+    errBox.textContent = `⚠ Could not load data: ${err.message}. Check the browser console (F12) for details.`;
+    document.getElementById('opwLoading').innerHTML = '<p style="color:#888;padding:2rem">Data unavailable — see console for details.</p>';
+    document.getElementById('tideLoading').innerHTML = '<p style="color:#888;padding:2rem">Data unavailable — see console for details.</p>';
+    console.error('❌ loadData error:', err);
   }
 }
 
