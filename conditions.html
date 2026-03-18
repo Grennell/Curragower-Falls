@@ -513,26 +513,36 @@ function overallBadge(tideVal, opwVal) {
 }
 
 // Parse datetime strings from the sheet
-// Handles formats like: "12:49 AM 18-Feb", "12:16 PM 18-Mar", "1:17 PM 18-Feb-2026"
-function parseDateTime(str) {
+// hint: 'past' = should be recent/historic, 'future' = should be upcoming, null = guess
+function parseDateTime(str, hint) {
   if (!str || !str.trim()) return null;
   str = str.trim();
 
-  // Format: "12:16 PM 18-Mar" or "1:17 PM 18-Feb" (no year)
-  let m = moment(str, ['h:mm A D-MMM', 'h:mm A DD-MMM'], true);
+  let m = moment(str, ['h:mm A D-MMM', 'h:mm A DD-MMM', 'h:mm A D-MMM-YYYY', 'h:mm A DD-MMM-YYYY']);
   if (m.isValid()) {
-    m.year(moment().year());
-    // If the date looks more than 6 months in the future, it's probably last year
-    if (m.diff(moment(), 'days') > 180) m.year(moment().year() - 1);
+    if (!str.match(/\d{4}/)) {
+      // No year in string — assign based on hint
+      m.year(moment().year());
+      if (hint === 'future') {
+        // If the date has already passed this year, it must be next year
+        if (m.diff(moment(), 'days') < -1) m.year(moment().year() + 1);
+      } else if (hint === 'past') {
+        // If the date is in the future this year, it must be last year
+        if (m.diff(moment(), 'days') > 1) m.year(moment().year() - 1);
+      } else {
+        // No hint — pick whichever year keeps it closest to today
+        const thisYear = m.clone().year(moment().year());
+        const lastYear = m.clone().year(moment().year() - 1);
+        const nextYear = m.clone().year(moment().year() + 1);
+        const diffs = [lastYear, thisYear, nextYear].map(d => Math.abs(d.diff(moment(), 'days')));
+        const minIdx = diffs.indexOf(Math.min(...diffs));
+        m = [lastYear, thisYear, nextYear][minIdx];
+      }
+    }
     return m.toDate();
   }
 
-  // Format with year: "12:16 PM 18-Mar-2026"
-  m = moment(str, ['h:mm A D-MMM-YYYY', 'h:mm A DD-MMM-YYYY'], true);
-  if (m.isValid()) return m.toDate();
-
-  // ISO or other standard formats
-  m = moment(str);
+  m = moment(str, moment.ISO_8601);
   if (m.isValid()) return m.toDate();
 
   console.warn('⚠ Could not parse datetime:', str);
@@ -614,7 +624,7 @@ function buildOPWChart(rows) {
 
   const data = rows
     .map(r => {
-      const dt = parseDateTime(r['Datetime']);
+      const dt = parseDateTime(r['Datetime'], 'past');
       const v  = parseFloat(r['OPW Data']);
       return dt && !isNaN(v) ? { x: dt, y: v } : null;
     })
@@ -758,7 +768,7 @@ function buildTideChart(rows, futureRows) {
 
   const historicData = rows
     .map(r => {
-      const dt = parseDateTime(r['Datetime']);
+      const dt = parseDateTime(r['Datetime'], 'past');
       const v  = parseFloat(r['Tide Height']);
       return dt && !isNaN(v) ? { x: dt, y: v } : null;
     })
@@ -770,7 +780,7 @@ function buildTideChart(rows, futureRows) {
     ? futureRows
         .filter(r => (r['Tide'] || '').toLowerCase() === 'low')
         .map(r => {
-          const dt = parseDateTime(r['Datetime']);
+          const dt = parseDateTime(r['Datetime'], 'future');
           const v  = parseFloat(r['Height Num']);
           if (!dt || isNaN(v)) {
             console.warn('⚠ Skipping future tide row — could not parse:', r);
@@ -935,7 +945,7 @@ function buildTable(rows) {
   // Show last 20 + next 5 (if future data)
   const recent = rows
     .map(r => {
-      const dt = parseDateTime(r['Datetime']);
+      const dt = parseDateTime(r['Datetime'], 'past');
       const tide = parseFloat(r['Tide Height']);
       const opw  = parseFloat(r['OPW Data']);
       return dt ? { dt, tide, opw, r } : null;
@@ -971,7 +981,7 @@ function updateStatus(rows) {
   const now = new Date();
   const sorted = rows
     .map(r => {
-      const dt = parseDateTime(r['Datetime']);
+      const dt = parseDateTime(r['Datetime'], 'past');
       const tide = parseFloat(r['Tide Height']);
       const opw  = parseFloat(r['OPW Data']);
       return { dt, tide, opw };
