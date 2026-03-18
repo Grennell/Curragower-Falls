@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Conditions — Curragower Falls</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-adapter-moment/1.0.1/chartjs-adapter-moment.min.js"></script>
+
+  <style>
+    :root {
+      --cream: #f5f0e8;
+      --deep-green: #1a3a2a;
+      --river-blue: #2c5f6e;
+      --foam-white: #fdfaf5;
+      --amber: #c47b2b;
+      --text: #2a2a2a;
+      --muted: #6b6b6b;
+      --border: #d8d0c4;
+
+      /* condition colours */
+      --c-none:    #e8e0d8;
+      --c-low:     #f0c070;
+      --c-ok:      #a8d4a0;
+      --c-good:    #5cb85c;
+      --c-best:    #2e7d32;
+      --c-high1:   #64b5f6;
+      --c-high2:   #1976d2;
+      --c-flood:   #7b1fa2;
+      --c-tide-ok: #a8d4a0;
+      --c-tide-mg: #f0c070;
+      --c-tide-hi: #e57373;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--foam-white);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--foam-white);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; font-weight: 700;
+      color: var(--deep-green); text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.85rem; font-weight: 500; text-decoration: none;
+      color: var(--text); letter-spacing: 0.04em; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--river-blue); }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      background: var(--deep-green); color: white;
+      padding: 3rem 3rem 2.5rem;
+    }
+    .page-header .eyebrow {
+      font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: rgba(255,255,255,0.5); margin-bottom: 0.6rem;
+    }
+    .page-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700; line-height: 1.15; margin-bottom: 0.8rem;
+    }
+    .page-header p { color: rgba(255,255,255,0.7); max-width: 600px; font-size: 0.95rem; }
+
+    /* ── STATUS CARDS ── */
+    .status-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .status-card {
+      padding: 1.5rem 2rem;
+      border-right: 1px solid var(--border);
+    }
+    .status-card:last-child { border-right: none; }
+    .status-card .label {
+      font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--muted); margin-bottom: 0.4rem;
+    }
+    .status-card .value {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem; font-weight: 700; color: var(--deep-green);
+      line-height: 1.1;
+    }
+    .status-card .sub {
+      font-size: 0.82rem; color: var(--muted); margin-top: 0.3rem;
+    }
+    .condition-badge {
+      display: inline-block;
+      padding: 0.3rem 0.9rem;
+      border-radius: 3px;
+      font-size: 0.82rem; font-weight: 600;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      margin-top: 0.4rem;
+    }
+
+    /* ── MAIN CONTENT ── */
+    .main { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; }
+
+    .section-label {
+      font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--river-blue); font-weight: 500; margin-bottom: 0.6rem;
+      display: block;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem; color: var(--deep-green);
+      margin-bottom: 0.4rem;
+    }
+    .chart-desc {
+      font-size: 0.88rem; color: var(--muted);
+      margin-bottom: 1.5rem; max-width: 680px;
+    }
+
+    /* ── CHART CONTAINERS ── */
+    .chart-wrap {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 1.5rem 1.5rem 1rem;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+    .chart-wrap canvas { width: 100% !important; }
+
+    /* ── LEGEND TABLE ── */
+    .legend-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    .legend-box { padding: 1.5rem; background: var(--cream); }
+    .legend-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; color: var(--deep-green);
+      margin-bottom: 1rem;
+    }
+    .legend-row {
+      display: flex; align-items: center; gap: 0.8rem;
+      padding: 0.45rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+    }
+    .legend-row:last-child { border-bottom: none; }
+    .legend-swatch {
+      width: 14px; height: 14px; border-radius: 2px; flex-shrink: 0;
+    }
+    .legend-range { font-weight: 500; min-width: 90px; font-size: 0.82rem; }
+    .legend-desc { color: var(--muted); }
+
+    /* ── LOADING / ERROR ── */
+    .loading {
+      text-align: center; padding: 4rem 2rem;
+      color: var(--muted); font-size: 0.95rem;
+    }
+    .spinner {
+      width: 32px; height: 32px; margin: 0 auto 1rem;
+      border: 3px solid var(--border);
+      border-top-color: var(--river-blue);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .error-box {
+      background: #fdf2f2; border: 1px solid #e8c0c0;
+      padding: 1.2rem 1.5rem; margin-bottom: 2rem;
+      font-size: 0.88rem; color: #8a3030;
+    }
+
+    /* ── DATA TABLE ── */
+    .data-table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      margin-bottom: 3rem;
+    }
+    table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+    thead th {
+      background: var(--deep-green); color: white;
+      padding: 0.7rem 1rem; text-align: left;
+      font-weight: 500; letter-spacing: 0.04em;
+      font-size: 0.78rem; text-transform: uppercase;
+    }
+    tbody tr:nth-child(even) { background: var(--cream); }
+    tbody td {
+      padding: 0.55rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .td-badge {
+      display: inline-block; padding: 0.15rem 0.5rem;
+      border-radius: 2px; font-size: 0.75rem; font-weight: 600;
+    }
+
+    /* ── DIVIDER ── */
+    hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--deep-green); color: rgba(255,255,255,0.5);
+      padding: 2rem 3rem; display: flex;
+      justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem; font-size: 0.82rem;
+    }
+    .footer-logo { font-family: 'Playfair Display', serif; color: white; font-size: 1.1rem; }
+    footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+    footer a:hover { color: white; }
+
+    @media (max-width: 680px) {
+      .legend-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .page-header { padding: 2rem 1.5rem; }
+      .main { padding: 2rem 1rem; }
+      .status-row { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Curragower Falls</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="conditions.html" class="active">Conditions</a></li>
+    <li><a href="index.html#paddlers">Paddlers</a></li>
+    <li><a href="index.html#location">Getting There</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <p class="eyebrow">● Live Data · Updated from OPW & Tide Tables</p>
+  <h1>Curragower Conditions</h1>
+  <p>River level at Ball's Bridge and predicted tide heights at Limerick Dock —
+     the two factors that determine whether the Gower is running.</p>
+</div>
+
+<!-- STATUS CARDS -->
+<div class="status-row" id="statusRow">
+  <div class="status-card">
+    <div class="label">Latest OPW Level (Ball's Bridge)</div>
+    <div class="value" id="latestOPW">—</div>
+    <div class="sub" id="latestOPWTime">Loading…</div>
+    <div id="opwBadge"></div>
+  </div>
+  <div class="status-card">
+    <div class="label">Latest Low Tide Height</div>
+    <div class="value" id="latestTide">—</div>
+    <div class="sub" id="latestTideTime">Loading…</div>
+    <div id="tideBadge"></div>
+  </div>
+  <div class="status-card">
+    <div class="label">Overall Conditions</div>
+    <div class="value" id="overallCondition">—</div>
+    <div class="sub" id="overallDesc">Loading…</div>
+  </div>
+  <div class="status-card">
+    <div class="label">Data last refreshed</div>
+    <div class="value" id="refreshTime" style="font-size:1.1rem">—</div>
+    <div class="sub"><a href="#" onclick="loadData(); return false;" style="color:var(--river-blue)">Refresh now</a></div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <div id="errorBox" class="error-box" style="display:none"></div>
+
+  <!-- CHART 1: OPW River Level -->
+  <span class="section-label">● Ball's Bridge River Level</span>
+  <h2>River Level at Low Tide</h2>
+  <p class="chart-desc">
+    OPW sensor reading taken at the moment of each low tide. The coloured bands
+    show what wave conditions correspond to each level. Data for the past 30 days.
+  </p>
+  <div class="chart-wrap" id="opwChartWrap">
+    <div class="loading" id="opwLoading">
+      <div class="spinner"></div>Fetching river level data…
+    </div>
+    <canvas id="opwChart" style="display:none"></canvas>
+  </div>
+
+  <!-- CHART 2: Tide Heights -->
+  <span class="section-label">● Limerick Dock Tides</span>
+  <h2>Low Tide Heights</h2>
+  <p class="chart-desc">
+    Predicted low tide heights at Limerick Dock. Tides below 1.0m are good;
+    above 1.15m the wave is unlikely to form regardless of river level.
+    Historic (past) tides shown in solid, future predictions shown lighter.
+  </p>
+  <div class="chart-wrap" id="tideChartWrap">
+    <div class="loading" id="tideLoading">
+      <div class="spinner"></div>Fetching tide data…
+    </div>
+    <canvas id="tideChart" style="display:none"></canvas>
+  </div>
+
+  <!-- COMBINED SESSIONS TABLE -->
+  <span class="section-label">● Recent Sessions at a Glance</span>
+  <h2>Recent Low Tides</h2>
+  <p class="chart-desc">Each row is one low tide. Both conditions must be good for the wave to run.</p>
+
+  <div class="data-table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Low Tide Time</th>
+          <th>Tide Height</th>
+          <th>Tide Condition</th>
+          <th>OPW Level</th>
+          <th>Wave Condition</th>
+          <th>Overall</th>
+        </tr>
+      </thead>
+      <tbody id="dataTableBody">
+        <tr><td colspan="7" class="loading">Loading…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr>
+
+  <!-- LEGEND -->
+  <span class="section-label">● How to read the charts</span>
+  <h2>Conditions Guide</h2>
+  <br>
+  <div class="legend-grid">
+    <div class="legend-box">
+      <h3>🌊 Ball's Bridge River Level</h3>
+      <div class="legend-row">
+        <div class="legend-swatch" style="background:#d0ccc8"></div>
+        <span class="legend-range">&lt; 0.75m</span>
+        <span class="legend-desc">Release too low. No wave.</span>
+      </div>
+      <div class="legend-row">
+        <div class="legend-swatch" style="background:#f0c070"></div>
+        <span class="legend-range">0.75 – 0.88m</span>
+        <span class="legend-desc">Low & shallow. Left foam pile, right side green.</span>
+      </div>
+      <div class="legend-row">
+        <div class="legend-swatch" style="background:#aed6a8"></div>
+        <span class="legend-range">0.88 – 1.00m</span>
+        <span class="legend-desc">Full foam pile. A bit flushy. Good level.</span>
+      </div>
+      <div class="legend-row">
+        <div class="legend-swatch" style="background:#81c784"></div>
+        <span class="legend-range">1.00 – 1.12m</span>
+        <span class="legend-desc">Full foam pile. Flat & thrasy, more like a big hole.</span>
+      </div>
+      <div class="legend-row">
+        <div class="legend-swatch" style="background:#4caf50"></div>
+        <span class="legend-range">1.12 – 1.24m</span>
+        <span class="legend-desc">Full foam pile. Good level.</span>
+      </div>
+      <div class="legend-row">
+        <div class="legend-swatch" style="background:#2e7d32"></div>
+        <span class="legend-range">1.24 – 1.37m</span>
+        <span class="legend-desc">⭐ Full foam pile with green. Best level.</span>
+      </div>
+      <div class="legend-row">
+        <div class="legend-swatch" style="background:#26a69a"></div>
+        <span class="legend-range">1.37 – 1.49m</span>
+        <span class="legend-desc">High but good. Full foam, bit of green, getting flushy.</span>
+      </div>
+      <div class="legend-row">
+        <div class="legend-swatch" style="background:#64b5f6"></div>
+        <span class="legend-range">1.49 – 1.73m</span>
+        <span class="legend-desc">High. Foam in and out. Great for surf kayaks / half slices.</span>
+      </div>
+      <div class="legend-row">
+        <div class="legend-swatch" style="background:#1976d2"></div>
+        <span class="legend-range">1.73 – 1.98m</span>
+        <span class="legend-desc">High. Gower green. Lil' Gower foam pile forming.</span>
+      </div>
+      <div class="legend-row">
+        <div class="legend-swatch" style="background:#7b1fa2"></div>
+        <span class="legend-range">&gt; 1.98m</span>
+        <span class="legend-desc">Flood. Biggie smalls potentially running.</span>
+      </div>
+    </div>
+    <div class="legend-box">
+      <h3>🌊 Tide Level at Limerick Dock</h3>
+      <div class="legend-row">
+        <div class="legend-swatch" style="background:#4caf50"></div>
+        <span class="legend-range">&lt; 1.0m</span>
+        <span class="legend-desc">Tides are good.</span>
+      </div>
+      <div class="legend-row">
+        <div class="legend-swatch" style="background:#f0c070"></div>
+        <span class="legend-range">1.0 – 1.15m</span>
+        <span class="legend-desc">Tides on the verge of being too high.</span>
+      </div>
+      <div class="legend-row">
+        <div class="legend-swatch" style="background:#e57373"></div>
+        <span class="legend-range">&gt; 1.15m</span>
+        <span class="legend-desc">Tides too high. Wave unlikely to form.</span>
+      </div>
+      <br>
+      <h3 style="margin-top:1.5rem">ℹ️ About this data</h3>
+      <p style="font-size:0.85rem; color:var(--muted); margin-top:0.5rem; line-height:1.6">
+        River level data comes from the OPW gauging station at Ball's Bridge (station 25061),
+        sampled at the moment of each low tide. Tide predictions are from
+        <a href="https://www.tidetimes.org.uk/limerick-dock-tide-times" target="_blank"
+           style="color:var(--river-blue)">tidetimes.org.uk</a>
+        for Limerick Dock. Data is updated automatically via Google Sheets.
+      </p>
+    </div>
+  </div>
+
+</div><!-- /main -->
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">Curragower Falls</div>
+    <div style="margin-top:0.3rem">Limerick City · River Shannon · Ireland</div>
+  </div>
+  <div style="text-align:right">
+    <a href="index.html">← Back to main site</a><br>
+    <span>Data provided in good faith. Always check conditions before paddling.</span>
+  </div>
+</footer>
+
+<script>
+// ─────────────────────────────────────────────
+// CONFIG — swap these URLs with your published CSV tabs
+// ─────────────────────────────────────────────
+const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQDMorOFSKXuIzsxxJxV2BOjgYPWR9CvGwyAI6mb6-98JDQZvqm4Etn1zeyjrYwAXtN74H0GWHwxi_1/pub?gid=76164422&single=true&output=csv';
+
+// If you publish your future-tides tab, add its URL here:
+const FUTURE_TIDES_CSV_URL = null; // e.g. '...pub?gid=XXXXXX&single=true&output=csv'
+
+// ─────────────────────────────────────────────
+// THRESHOLDS
+// ─────────────────────────────────────────────
+const OPW_BANDS = [
+  { max: 0.75, label: 'Too low',       color: '#d0ccc8', textColor: '#555' },
+  { max: 0.88, label: 'Low & shallow', color: '#f0c070', textColor: '#7a4f00' },
+  { max: 1.00, label: 'Good',          color: '#aed6a8', textColor: '#2a5a24' },
+  { max: 1.12, label: 'Good',          color: '#81c784', textColor: '#1a4a18' },
+  { max: 1.24, label: 'Good',          color: '#4caf50', textColor: '#fff' },
+  { max: 1.37, label: 'Best ⭐',        color: '#2e7d32', textColor: '#fff' },
+  { max: 1.49, label: 'High / good',   color: '#26a69a', textColor: '#fff' },
+  { max: 1.73, label: 'High / surf',   color: '#64b5f6', textColor: '#003a6b' },
+  { max: 1.98, label: 'High green',    color: '#1976d2', textColor: '#fff' },
+  { max: 99,   label: 'Flood',         color: '#7b1fa2', textColor: '#fff' },
+];
+
+const TIDE_BANDS = [
+  { max: 1.00, label: 'Good',     color: '#4caf5033', border: '#4caf50' },
+  { max: 1.15, label: 'Marginal', color: '#f0c07033', border: '#f0c070' },
+  { max: 99,   label: 'Too high', color: '#e5737333', border: '#e57373' },
+];
+
+// ─────────────────────────────────────────────
+// HELPERS
+// ─────────────────────────────────────────────
+function getOPWBand(val) {
+  return OPW_BANDS.find(b => val < b.max) || OPW_BANDS[OPW_BANDS.length - 1];
+}
+function getTideBand(val) {
+  return TIDE_BANDS.find(b => val < b.max) || TIDE_BANDS[TIDE_BANDS.length - 1];
+}
+
+function opwBadgeHTML(val) {
+  const b = getOPWBand(val);
+  return `<span class="condition-badge" style="background:${b.color};color:${b.textColor}">${b.label}</span>`;
+}
+function tideBadgeHTML(val) {
+  const b = getTideBand(val);
+  const colours = { 'Good': '#2e7d32', 'Marginal': '#a06000', 'Too high': '#c0392b' };
+  const bgs = { 'Good': '#e8f5e9', 'Marginal': '#fff8e1', 'Too high': '#ffebee' };
+  return `<span class="condition-badge" style="background:${bgs[b.label]||'#eee'};color:${colours[b.label]||'#333'}">${b.label}</span>`;
+}
+function overallBadge(tideVal, opwVal) {
+  const tideBand = getTideBand(tideVal);
+  const opwBand  = getOPWBand(opwVal);
+  const tideOK   = tideBand.label === 'Good';
+  const tideMG   = tideBand.label === 'Marginal';
+  const opwOK    = opwVal >= 0.75;
+  if (!opwOK)        return { label: 'No wave',     bg: '#d0ccc8', fg: '#555' };
+  if (!tideOK && !tideMG) return { label: 'Tide too high', bg: '#ffebee', fg: '#c0392b' };
+  if (tideOK && opwOK)    return { label: '✓ On',    bg: '#e8f5e9', fg: '#2e7d32' };
+  return                         { label: 'Marginal', bg: '#fff8e1', fg: '#a06000' };
+}
+
+// Parse "12:49 AM 18-Feb" style datetimes
+function parseDateTime(str) {
+  if (!str) return null;
+  // Try parsing various formats
+  let m = moment(str, ['h:mm A D-MMM', 'h:mm A DD-MMM', 'DD-MMM-YYYY', 'DD/MM/YYYY HH:mm'], true);
+  if (m.isValid()) {
+    // If no year in string, assume current year (or last year if date is in future by > 6 months)
+    if (!str.match(/\d{4}/)) {
+      m.year(moment().year());
+      if (m.diff(moment(), 'days') > 180) m.year(moment().year() - 1);
+    }
+    return m.toDate();
+  }
+  return null;
+}
+
+function parseCSV(text) {
+  const lines = text.trim().split('\n');
+  const headers = lines[0].split(',').map(h => h.replace(/^"|"$/g, '').trim());
+  return lines.slice(1).map(line => {
+    // Handle quoted fields with commas
+    const cols = [];
+    let cur = '', inQ = false;
+    for (let ch of line) {
+      if (ch === '"') inQ = !inQ;
+      else if (ch === ',' && !inQ) { cols.push(cur.trim()); cur = ''; }
+      else cur += ch;
+    }
+    cols.push(cur.trim());
+    const row = {};
+    headers.forEach((h, i) => row[h] = (cols[i] || '').replace(/^"|"$/g, '').trim());
+    return row;
+  }).filter(r => r[headers[0]]);
+}
+
+// ─────────────────────────────────────────────
+// CHART INSTANCES
+// ─────────────────────────────────────────────
+let opwChartInst = null;
+let tideChartInst = null;
+
+// ─────────────────────────────────────────────
+// OPW band annotations as chart.js datasets (background fills)
+// ─────────────────────────────────────────────
+function makeOPWBandDatasets(minDate, maxDate) {
+  // We'll draw horizontal band fills as annotation plugin isn't available,
+  // so instead we use filled datasets
+  return OPW_BANDS.slice().reverse().map((band, i, arr) => {
+    const lower = i < arr.length - 1 ? arr[i + 1].max : 0;
+    const upper = band.max === 99 ? 2.5 : band.max;
+    return {
+      label: '_band_' + band.label,
+      data: [
+        { x: minDate, y: lower },
+        { x: maxDate, y: lower },
+      ],
+      fill: { target: { value: upper }, above: band.color + '55', below: 'transparent' },
+      borderWidth: 0,
+      pointRadius: 0,
+      tension: 0,
+      backgroundColor: band.color + '44',
+      showInLegend: false,
+    };
+  });
+}
+
+function makeTideBandDatasets(minDate, maxDate) {
+  return TIDE_BANDS.slice().reverse().map((band) => {
+    const upper = band.max === 99 ? 2.5 : band.max;
+    return {
+      label: '_tband_' + band.label,
+      data: [
+        { x: minDate, y: 0 },
+        { x: maxDate, y: 0 },
+      ],
+      fill: { target: { value: upper }, above: band.color, below: 'transparent' },
+      borderWidth: 0, pointRadius: 0, tension: 0, showInLegend: false,
+    };
+  });
+}
+
+// ─────────────────────────────────────────────
+// BUILD OPW CHART
+// ─────────────────────────────────────────────
+function buildOPWChart(rows) {
+  const canvas = document.getElementById('opwChart');
+  document.getElementById('opwLoading').style.display = 'none';
+  canvas.style.display = 'block';
+
+  const data = rows
+    .map(r => {
+      const dt = parseDateTime(r['Datetime']);
+      const v  = parseFloat(r['OPW Data']);
+      return dt && !isNaN(v) ? { x: dt, y: v } : null;
+    })
+    .filter(Boolean)
+    .sort((a, b) => a.x - b.x);
+
+  if (!data.length) return;
+
+  const minDate = data[0].x;
+  const maxDate = data[data.length - 1].x;
+  const now = new Date();
+
+  // Band backgrounds using filled areas
+  const bandDatasets = OPW_BANDS.map(band => ({
+    type: 'line',
+    label: '__',
+    data: [
+      { x: minDate, y: band.max === 99 ? 2.5 : band.max },
+      { x: maxDate, y: band.max === 99 ? 2.5 : band.max },
+    ],
+    backgroundColor: band.color + '40',
+    borderColor: 'transparent',
+    borderWidth: 0,
+    pointRadius: 0,
+    fill: '-1',
+    order: 10,
+  }));
+
+  if (opwChartInst) opwChartInst.destroy();
+  opwChartInst = new Chart(canvas, {
+    type: 'line',
+    data: {
+      datasets: [
+        // Background band fills
+        {
+          type: 'line',
+          label: '__base',
+          data: [{ x: minDate, y: 0 }, { x: maxDate, y: 0 }],
+          backgroundColor: OPW_BANDS[0].color + '40',
+          borderColor: 'transparent',
+          borderWidth: 0,
+          pointRadius: 0,
+          fill: 'origin',
+          order: 20,
+        },
+        ...OPW_BANDS.map((band, i) => ({
+          type: 'line',
+          label: `__band${i}`,
+          data: [
+            { x: minDate, y: band.max === 99 ? 2.5 : band.max },
+            { x: maxDate, y: band.max === 99 ? 2.5 : band.max },
+          ],
+          backgroundColor: band.color + '50',
+          borderColor: band.color,
+          borderWidth: 0.5,
+          borderDash: [3, 3],
+          pointRadius: 0,
+          fill: i === 0 ? { target: 'origin', above: band.color + '40' } : { target: `-1`, above: band.color + '40' },
+          order: 20 + i,
+        })),
+        // Actual OPW data points
+        {
+          type: 'scatter',
+          label: 'OPW Level at Low Tide',
+          data: data.map(d => ({
+            x: d.x,
+            y: d.y,
+            bg: getOPWBand(d.y).color,
+          })),
+          backgroundColor: ctx => {
+            const pt = data[ctx.dataIndex];
+            return pt ? getOPWBand(pt.y).color : '#888';
+          },
+          borderColor: '#fff',
+          borderWidth: 1.5,
+          pointRadius: 6,
+          pointHoverRadius: 9,
+          order: 1,
+        },
+        // Vertical "now" line
+        {
+          type: 'line',
+          label: 'Now',
+          data: [{ x: now, y: 0 }, { x: now, y: 2.5 }],
+          borderColor: '#c47b2b',
+          borderWidth: 2,
+          borderDash: [5, 4],
+          pointRadius: 0,
+          fill: false,
+          order: 2,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      animation: { duration: 600 },
+      interaction: { mode: 'nearest', axis: 'x', intersect: false },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          filter: item => !item.dataset.label.startsWith('__') && item.dataset.label !== 'Now',
+          callbacks: {
+            title: items => {
+              const d = items[0]?.raw?.x;
+              return d ? moment(d).format('ddd D MMM, HH:mm') : '';
+            },
+            label: item => {
+              const v = item.raw.y;
+              return ` OPW: ${v.toFixed(3)}m — ${getOPWBand(v).label}`;
+            },
+          },
+        },
+      },
+      scales: {
+        x: {
+          type: 'time',
+          time: { unit: 'day', displayFormats: { day: 'D MMM' } },
+          grid: { color: '#e8e0d800' },
+          ticks: { font: { size: 11 }, color: '#888' },
+        },
+        y: {
+          min: 0.5, max: 2.2,
+          title: { display: true, text: 'Level (m)', font: { size: 11 }, color: '#888' },
+          ticks: { font: { size: 11 }, color: '#888' },
+          grid: { color: '#e8e0d8' },
+        },
+      },
+    },
+  });
+}
+
+// ─────────────────────────────────────────────
+// BUILD TIDE CHART
+// ─────────────────────────────────────────────
+function buildTideChart(rows, futureRows) {
+  const canvas = document.getElementById('tideChart');
+  document.getElementById('tideLoading').style.display = 'none';
+  canvas.style.display = 'block';
+
+  const now = new Date();
+
+  const historicData = rows
+    .map(r => {
+      const dt = parseDateTime(r['Datetime']);
+      const v  = parseFloat(r['Tide Height']);
+      return dt && !isNaN(v) ? { x: dt, y: v } : null;
+    })
+    .filter(Boolean)
+    .sort((a, b) => a.x - b.x);
+
+  // Future tides: if we have them use them; otherwise highlight upcoming from historic
+  const futureData = futureRows
+    ? futureRows.map(r => {
+        const dt = parseDateTime(r['Datetime'] || r['Time'] || r['Date']);
+        const v  = parseFloat(r['Tide Height'] || r['Height']);
+        return dt && !isNaN(v) ? { x: dt, y: v } : null;
+      }).filter(Boolean).sort((a, b) => a.x - b.x)
+    : historicData.filter(d => d.x >= now);
+
+  if (!historicData.length) return;
+
+  const allData = [...historicData, ...futureData];
+  const minDate = allData[0].x;
+  const maxDate = allData[allData.length - 1].x;
+
+  if (tideChartInst) tideChartInst.destroy();
+  tideChartInst = new Chart(canvas, {
+    type: 'line',
+    data: {
+      datasets: [
+        // Band: too high (red)
+        {
+          type: 'line',
+          label: '__thi',
+          data: [{ x: minDate, y: 2.5 }, { x: maxDate, y: 2.5 }],
+          backgroundColor: '#e5737322',
+          borderColor: '#e5737366',
+          borderWidth: 1,
+          borderDash: [4, 3],
+          pointRadius: 0,
+          fill: { target: { value: 1.15 }, above: '#e5737322' },
+          order: 20,
+        },
+        // Band: marginal (yellow)
+        {
+          type: 'line',
+          label: '__tmg',
+          data: [{ x: minDate, y: 1.15 }, { x: maxDate, y: 1.15 }],
+          backgroundColor: '#f0c07022',
+          borderColor: '#f0c07088',
+          borderWidth: 1,
+          borderDash: [4, 3],
+          pointRadius: 0,
+          fill: { target: { value: 1.0 }, above: '#f0c07022' },
+          order: 21,
+        },
+        // Band: good (green)
+        {
+          type: 'line',
+          label: '__tok',
+          data: [{ x: minDate, y: 1.0 }, { x: maxDate, y: 1.0 }],
+          backgroundColor: '#4caf5022',
+          borderColor: '#4caf5066',
+          borderWidth: 1,
+          borderDash: [4, 3],
+          pointRadius: 0,
+          fill: { target: 'origin', above: '#4caf5018' },
+          order: 22,
+        },
+        // Historic tides
+        {
+          type: 'scatter',
+          label: 'Past Low Tides',
+          data: historicData.filter(d => d.x < now),
+          backgroundColor: ctx => {
+            const pt = historicData.filter(d => d.x < now)[ctx.dataIndex];
+            const band = pt ? getTideBand(pt.y) : null;
+            return band ? band.border + 'cc' : '#888';
+          },
+          borderColor: '#fff',
+          borderWidth: 1.5,
+          pointRadius: 5,
+          pointHoverRadius: 8,
+          order: 1,
+        },
+        // Future tides
+        {
+          type: 'scatter',
+          label: 'Predicted Low Tides',
+          data: [...historicData.filter(d => d.x >= now), ...futureData],
+          backgroundColor: ctx => {
+            const pts = [...historicData.filter(d => d.x >= now), ...futureData];
+            const pt = pts[ctx.dataIndex];
+            const band = pt ? getTideBand(pt.y) : null;
+            return band ? band.border + '66' : '#ccc';
+          },
+          borderColor: '#aaa',
+          borderWidth: 1.5,
+          borderDash: [3, 3],
+          pointRadius: 5,
+          pointStyle: 'triangle',
+          pointHoverRadius: 8,
+          order: 1,
+        },
+        // Now line
+        {
+          type: 'line',
+          label: 'Now',
+          data: [{ x: now, y: 0 }, { x: now, y: 2.5 }],
+          borderColor: '#c47b2b',
+          borderWidth: 2,
+          borderDash: [5, 4],
+          pointRadius: 0,
+          fill: false,
+          order: 2,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      animation: { duration: 600 },
+      plugins: {
+        legend: {
+          display: true,
+          labels: {
+            filter: item => !item.text.startsWith('__') && item.text !== 'Now',
+            font: { size: 11 },
+            usePointStyle: true,
+          },
+        },
+        tooltip: {
+          filter: item => !item.dataset.label.startsWith('__') && item.dataset.label !== 'Now',
+          callbacks: {
+            title: items => {
+              const d = items[0]?.raw?.x;
+              return d ? moment(d).format('ddd D MMM, HH:mm') : '';
+            },
+            label: item => {
+              const v = item.raw.y;
+              return ` Tide: ${v.toFixed(2)}m — ${getTideBand(v).label}`;
+            },
+          },
+        },
+      },
+      scales: {
+        x: {
+          type: 'time',
+          time: { unit: 'day', displayFormats: { day: 'D MMM' } },
+          grid: { color: '#e8e0d800' },
+          ticks: { font: { size: 11 }, color: '#888' },
+        },
+        y: {
+          min: 0,
+          max: 1.8,
+          title: { display: true, text: 'Tide Height (m)', font: { size: 11 }, color: '#888' },
+          ticks: { font: { size: 11 }, color: '#888' },
+          grid: { color: '#e8e0d8' },
+        },
+      },
+    },
+  });
+}
+
+// ─────────────────────────────────────────────
+// BUILD TABLE
+// ─────────────────────────────────────────────
+function buildTable(rows) {
+  const tbody = document.getElementById('dataTableBody');
+  const now = new Date();
+  // Show last 20 + next 5 (if future data)
+  const recent = rows
+    .map(r => {
+      const dt = parseDateTime(r['Datetime']);
+      const tide = parseFloat(r['Tide Height']);
+      const opw  = parseFloat(r['OPW Data']);
+      return dt ? { dt, tide, opw, r } : null;
+    })
+    .filter(Boolean)
+    .sort((a, b) => b.dt - a.dt)
+    .slice(0, 25);
+
+  if (!recent.length) { tbody.innerHTML = '<tr><td colspan="7">No data available.</td></tr>'; return; }
+
+  tbody.innerHTML = recent.map(({ dt, tide, opw, r }) => {
+    const isFuture = dt > now;
+    const tideBandLabel = isNaN(tide) ? '—' : getTideBand(tide).label;
+    const opwBandLabel  = isNaN(opw)  ? '—' : getOPWBand(opw).label;
+    const overall = (!isNaN(tide) && !isNaN(opw)) ? overallBadge(tide, opw) : null;
+    const rowStyle = isFuture ? 'opacity:0.65;font-style:italic' : '';
+    return `<tr style="${rowStyle}">
+      <td>${moment(dt).format('ddd D MMM YYYY')}</td>
+      <td>${moment(dt).format('HH:mm')}${isFuture ? ' 🔮' : ''}</td>
+      <td>${isNaN(tide) ? '—' : tide.toFixed(2) + 'm'}</td>
+      <td>${isNaN(tide) ? '—' : `<span class="td-badge" style="background:${getTideBand(tide).color};border:1px solid ${getTideBand(tide).border}">${tideBandLabel}</span>`}</td>
+      <td>${isNaN(opw) ? '—' : opw.toFixed(3) + 'm'}</td>
+      <td>${isNaN(opw) ? '—' : `<span class="td-badge" style="background:${getOPWBand(opw).color};color:${getOPWBand(opw).textColor}">${opwBandLabel}</span>`}</td>
+      <td>${overall ? `<span class="td-badge" style="background:${overall.bg};color:${overall.fg}">${overall.label}</span>` : '—'}</td>
+    </tr>`;
+  }).join('');
+}
+
+// ─────────────────────────────────────────────
+// UPDATE STATUS CARDS
+// ─────────────────────────────────────────────
+function updateStatus(rows) {
+  const now = new Date();
+  const sorted = rows
+    .map(r => {
+      const dt = parseDateTime(r['Datetime']);
+      const tide = parseFloat(r['Tide Height']);
+      const opw  = parseFloat(r['OPW Data']);
+      return { dt, tide, opw };
+    })
+    .filter(r => r.dt && r.dt <= now && !isNaN(r.tide) && !isNaN(r.opw))
+    .sort((a, b) => b.dt - a.dt);
+
+  if (!sorted.length) return;
+  const latest = sorted[0];
+
+  document.getElementById('latestOPW').textContent = latest.opw.toFixed(3) + 'm';
+  document.getElementById('latestOPWTime').textContent = moment(latest.dt).format('ddd D MMM, HH:mm');
+  document.getElementById('opwBadge').innerHTML = opwBadgeHTML(latest.opw);
+
+  document.getElementById('latestTide').textContent = latest.tide.toFixed(2) + 'm';
+  document.getElementById('latestTideTime').textContent = moment(latest.dt).format('ddd D MMM, HH:mm');
+  document.getElementById('tideBadge').innerHTML = tideBadgeHTML(latest.tide);
+
+  const ov = overallBadge(latest.tide, latest.opw);
+  const opwBand = getOPWBand(latest.opw);
+  document.getElementById('overallCondition').innerHTML =
+    `<span style="color:${ov.fg}">${ov.label}</span>`;
+  document.getElementById('overallDesc').textContent = opwBand.label;
+
+  document.getElementById('refreshTime').textContent = moment().format('HH:mm, D MMM');
+}
+
+// ─────────────────────────────────────────────
+// MAIN LOAD
+// ─────────────────────────────────────────────
+async function loadData() {
+  const errBox = document.getElementById('errorBox');
+  errBox.style.display = 'none';
+
+  try {
+    // Fetch main (historic) sheet
+    const resp = await fetch(SHEET_CSV_URL);
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const text = await resp.text();
+    const rows = parseCSV(text);
+
+    if (!rows.length) throw new Error('No data rows found in sheet.');
+
+    updateStatus(rows);
+    buildOPWChart(rows);
+
+    // Fetch future tides if available
+    let futureRows = null;
+    if (FUTURE_TIDES_CSV_URL) {
+      try {
+        const fr = await fetch(FUTURE_TIDES_CSV_URL);
+        const ft = await fr.text();
+        futureRows = parseCSV(ft);
+      } catch (e) {
+        console.warn('Future tides fetch failed:', e);
+      }
+    }
+
+    buildTideChart(rows, futureRows);
+    buildTable(rows);
+
+  } catch (err) {
+    errBox.style.display = 'block';
+    errBox.textContent = `⚠ Could not load data: ${err.message}. The Google Sheet may need to be published as CSV, or there may be a network issue.`;
+    document.getElementById('opwLoading').innerHTML = '<p style="color:#888;padding:2rem">Data unavailable.</p>';
+    document.getElementById('tideLoading').innerHTML = '<p style="color:#888;padding:2rem">Data unavailable.</p>';
+    console.error(err);
+  }
+}
+
+loadData();
+</script>
+</body>
+</html>

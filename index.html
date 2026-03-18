@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Curragower Falls — Limerick's Hidden Gem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #f5f0e8;
+      --deep-green: #1a3a2a;
+      --river-blue: #2c5f6e;
+      --foam-white: #fdfaf5;
+      --amber: #c47b2b;
+      --text: #2a2a2a;
+      --muted: #6b6b6b;
+      --border: #d8d0c4;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--foam-white);
+      color: var(--text);
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    /* ──────────── NAV ──────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--foam-white);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--deep-green);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.88rem;
+      font-weight: 500;
+      text-decoration: none;
+      color: var(--text);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--river-blue); }
+
+    /* ──────────── HERO ──────────── */
+    .hero {
+      min-height: 90vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 4rem 5rem 5rem;
+      background: var(--deep-green);
+      color: white;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      line-height: 1.1;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: white;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: #a8d5c8;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.8);
+      max-width: 420px;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      background: var(--amber);
+      color: white;
+      text-decoration: none;
+      padding: 0.85rem 2rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      width: fit-content;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .hero-btn:hover { background: #a86520; transform: translateY(-1px); }
+
+    .hero-image {
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.35) 100%),
+        url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Curragower_Falls_Limerick.jpg/1280px-Curragower_Falls_Limerick.jpg')
+        center/cover no-repeat;
+      position: relative;
+    }
+
+    .hero-image-caption {
+      position: absolute;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.05em;
+    }
+
+    /* ──────────── TIDE STATUS BANNER ──────────── */
+    .tide-banner {
+      background: var(--river-blue);
+      color: white;
+      padding: 1.2rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .tide-banner-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      opacity: 0.7;
+      margin-bottom: 0.2rem;
+    }
+
+    .tide-banner-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .tide-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 0.4rem 1.2rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .status-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #7bcfaa;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .tide-link {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.82rem;
+      text-decoration: underline;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    /* ──────────── SECTIONS ──────────── */
+    .section {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    .section-wide {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--river-blue);
+      font-weight: 500;
+      margin-bottom: 0.8rem;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      line-height: 1.2;
+      font-weight: 700;
+      color: var(--deep-green);
+      margin-bottom: 1.5rem;
+    }
+
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--deep-green);
+      margin-bottom: 0.6rem;
+    }
+
+    p { margin-bottom: 1.2rem; color: #3a3a3a; }
+
+    hr.divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 4rem 0;
+    }
+
+    /* ──────────── INTRO QUOTE ──────────── */
+    .intro-quote {
+      background: var(--cream);
+      border-left: 4px solid var(--amber);
+      padding: 2rem 2.5rem;
+      margin: 3rem 0;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.25rem;
+      color: var(--deep-green);
+      line-height: 1.6;
+    }
+
+    /* ──────────── HOW IT WORKS ──────────── */
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .how-card {
+      padding: 2rem;
+      background: var(--cream);
+      border-top: 3px solid var(--river-blue);
+    }
+
+    .how-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: var(--border);
+      line-height: 1;
+      margin-bottom: 0.8rem;
+    }
+
+    .how-card h3 { font-size: 1.1rem; margin-bottom: 0.6rem; }
+    .how-card p { font-size: 0.92rem; margin: 0; color: var(--muted); }
+
+    /* ──────────── CONDITIONS WIDGET ──────────── */
+    .conditions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+
+    .condition-block {
+      padding: 2rem;
+      background: var(--foam-white);
+      border: 1px solid var(--border);
+    }
+
+    .condition-block.good {
+      border-color: #7bcfaa;
+      background: #f0faf5;
+    }
+
+    .condition-block.bad {
+      border-color: #e8b4a0;
+      background: #fdf5f2;
+    }
+
+    .condition-tag {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+
+    .condition-block.good .condition-tag { color: #2a7a52; }
+    .condition-block.bad .condition-tag { color: #a04020; }
+
+    .condition-block ul {
+      padding-left: 1.2rem;
+      font-size: 0.93rem;
+      color: var(--muted);
+    }
+
+    .condition-block ul li { margin-bottom: 0.4rem; }
+
+    /* ──────────── WAVES INFO ──────────── */
+    .waves-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 3rem;
+      align-items: start;
+    }
+
+    .wave-card {
+      background: var(--cream);
+      padding: 2.5rem;
+    }
+
+    .wave-badge {
+      display: inline-block;
+      background: var(--river-blue);
+      color: white;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.7rem;
+      margin-bottom: 1rem;
+    }
+
+    .wave-card h3 { margin-bottom: 0.8rem; }
+    .wave-card p { font-size: 0.93rem; color: var(--muted); }
+
+    /* ──────────── GETTING THERE ──────────── */
+    .location-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .map-placeholder {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.8rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .map-icon { font-size: 2.5rem; }
+
+    .detail-row {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+
+    .detail-icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .detail-text strong {
+      display: block;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .detail-text a {
+      color: var(--river-blue);
+    }
+
+    /* ──────────── LINKS BLOCK ──────────── */
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .link-card {
+      display: block;
+      padding: 1.8rem;
+      border: 1px solid var(--border);
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color 0.2s, transform 0.15s;
+    }
+
+    .link-card:hover {
+      border-color: var(--river-blue);
+      transform: translateY(-2px);
+    }
+
+    .link-card-icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
+    .link-card h3 { font-size: 1rem; margin-bottom: 0.4rem; }
+    .link-card p { font-size: 0.85rem; color: var(--muted); margin: 0; }
+
+    /* ──────────── FULL-WIDTH INTERLUDE ──────────── */
+    .interlude {
+      background: var(--deep-green);
+      color: white;
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+
+    .interlude h2 { color: white; margin-bottom: 1rem; }
+    .interlude p { color: rgba(255,255,255,0.75); max-width: 560px; margin: 0 auto 2rem; }
+
+    .interlude .hero-btn {
+      border: 1px solid rgba(255,255,255,0.5);
+      background: transparent;
+      color: white;
+    }
+
+    .interlude .hero-btn:hover { background: rgba(255,255,255,0.1); }
+
+    /* ──────────── NEWSLETTER ──────────── */
+    .newsletter {
+      background: var(--cream);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .newsletter h2 { margin-bottom: 0.5rem; font-size: 1.8rem; }
+    .newsletter p { color: var(--muted); margin-bottom: 1.5rem; font-size: 0.95rem; }
+
+    .newsletter-form {
+      display: flex;
+      max-width: 440px;
+      margin: 0 auto;
+      gap: 0;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--border);
+      border-right: none;
+      font-family: inherit;
+      font-size: 0.95rem;
+      outline: none;
+      background: white;
+    }
+
+    .newsletter-form input:focus { border-color: var(--river-blue); }
+
+    .newsletter-form button {
+      padding: 0.85rem 1.5rem;
+      background: var(--deep-green);
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: background 0.2s;
+    }
+
+    .newsletter-form button:hover { background: var(--river-blue); }
+
+    /* ──────────── FOOTER ──────────── */
+    footer {
+      background: var(--deep-green);
+      color: rgba(255,255,255,0.6);
+      padding: 3rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.85rem;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      color: white;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+    footer a:hover { color: white; }
+
+    /* ──────────── SEPARATOR ACCENT ──────────── */
+    .section-accent {
+      width: 50px;
+      height: 3px;
+      background: var(--amber);
+      margin-bottom: 2.5rem;
+    }
+
+    /* ──────────── ALTERNATE BG ──────────── */
+    .section-cream { background: var(--cream); }
+    .section-cream .section, .section-cream .section-wide { /* no change */ }
+
+    /* ──────────── RESPONSIVE ──────────── */
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-image { min-height: 280px; }
+      .hero-text { padding: 3rem 2rem; }
+      .how-grid, .conditions-grid, .waves-split,
+      .location-split, .links-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .tide-banner { flex-direction: column; gap: 1rem; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Curragower Falls</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#conditions">Conditions</a></li>
+      <li><a href="#paddlers">For Paddlers</a></li>
+      <li><a href="#location">Getting There</a></li>
+      <li><a href="#links">Useful Links</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <p class="hero-eyebrow">● Limerick City, River Shannon ●</p>
+      <h1 class="hero-title">Limerick's<br><em>living</em><br>white water</h1>
+      <p class="hero-subtitle">
+        Curragower Falls is a tidal play wave in the heart of Limerick city —
+        one of Ireland's best urban kayaking spots, right under the shadow
+        of King John's Castle.
+      </p>
+      <a href="#about" class="hero-btn">Discover the Falls ↓</a>
+    </div>
+    <div class="hero-image">
+      <span class="hero-image-caption">Curragower, Clancy's Strand</span>
+    </div>
+  </section>
+
+  <!-- TIDE STATUS BANNER -->
+  <div class="tide-banner">
+    <div>
+      <div class="tide-banner-label">Tide data for Limerick Dock</div>
+      <div class="tide-banner-value">Check sfpc.ie for live tides</div>
+    </div>
+    <div class="tide-status-pill">
+      <span class="status-dot"></span>
+      Works ~2–3 hrs before low tide + Ardnacrusha release
+    </div>
+    <a href="https://www.sfpc.ie/weather/tide.html" target="_blank" class="tide-link">
+      → Live tide table at sfpc.ie
+    </a>
+  </div>
+
+  <!-- ABOUT -->
+  <div id="about">
+    <div class="section">
+      <span class="section-label">● About the Falls</span>
+      <div class="section-accent"></div>
+      <h2>What are the Curragower Falls?</h2>
+
+      <p>
+        Curragower Falls sits in the very heart of Limerick city on the River Shannon,
+        immediately upstream of Sarsfield Bridge, in the shadow of the medieval
+        King John's Castle. It is one of Ireland's finest urban whitewater features —
+        and one of its most unique, because it is both tidal <em>and</em> flow-dependent.
+      </p>
+
+      <p>
+        The falls form when the River Shannon drops over a natural rock ledge as the
+        tide ebbs. But unlike a river weir that runs constantly, Curragower needs two
+        things to work: a low tide, and a meaningful release of water from the
+        Ardnacrusha hydroelectric station upstream. When both align, the result is a
+        powerful, dynamic standing wave that has attracted freestyle kayakers and
+        surfers from all over Ireland and beyond.
+      </p>
+
+      <div class="intro-quote">
+        "It's hard to believe that such an exciting natural feature exists in our very
+        own city centre."
+        <br><small style="font-size:0.75rem; font-style:normal; margin-top:0.5rem; display:block; opacity:0.6;">— Get West Adventure</small>
+      </div>
+
+      <p>
+        During the winter months — roughly November to April — when the Shannon is
+        running high, the combination of volume and low tide produces the best
+        conditions. Two main waves can form: the <strong>Main Gower</strong> in the
+        centre of the channel, and <strong>Lil' Gower</strong> on river right at higher
+        levels. At exceptional flood conditions, Lil' Gower can grow into an
+        impressive six-foot wave.
+      </p>
+
+      <p>
+        Curragower isn't just for kayakers. It's a favourite spot for locals walking
+        along Clancy's Strand, photographers, and anyone who loves watching raw water
+        in an extraordinary city setting. The adjacent <strong>Curragower Bar</strong>
+        is well placed for warming up afterwards.
+      </p>
+
+      <p>
+        In 2024, Fergal Lawler of The Cranberries composed a full orchestral piece
+        called <em>"The Curragower Falls"</em>, commissioned by RTÉ lyric fm to
+        celebrate its 25th anniversary — a testament to just how deeply these falls
+        are woven into the fabric of Limerick's identity.
+      </p>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="section-cream">
+    <div class="section">
+      <span class="section-label">● How it works</span>
+      <div class="section-accent"></div>
+      <h2>Tide, Flow & the Falls</h2>
+      <p>
+        Unlike most waterfalls, Curragower is the product of two overlapping
+        forces. Understanding them is the key to knowing when to show up.
+      </p>
+
+      <div class="how-grid">
+        <div class="how-card">
+          <div class="how-number">01</div>
+          <h3>The Tide Ebbs</h3>
+          <p>As the Shannon tide drops, a head difference builds across the rock
+          ledge. The wave begins to form roughly 2–3 hours before low tide. Use
+          <strong>Limerick Dock</strong> tides (not Tarbert — they differ).</p>
+        </div>
+        <div class="how-card">
+          <div class="how-number">02</div>
+          <h3>Ardnacrusha Releases</h3>
+          <p>The ESB's Ardnacrusha dam upstream controls how much water flows
+          through. The wave is best when electricity generation is in demand —
+          weekday evenings and cold mornings tend to be most reliable.</p>
+        </div>
+        <div class="how-card">
+          <div class="how-number">03</div>
+          <h3>The Wave Forms</h3>
+          <p>When both factors align, a standing wave emerges mid-channel.
+          At low tide heights of 1.1m or lower the wave goes green; below 0.7m
+          it can be exceptional. The window is roughly 3 hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONDITIONS -->
+  <div id="conditions">
+    <div class="section">
+      <span class="section-label">● When to go</span>
+      <div class="section-accent"></div>
+      <h2>Reading the Conditions</h2>
+      <p>
+        Curragower rewards those who do a little homework. Below is a quick guide
+        to what makes a good session — and what doesn't.
+      </p>
+
+      <div class="conditions-grid">
+        <div class="condition-block good">
+          <span class="condition-tag">✓ Good conditions</span>
+          <ul>
+            <li>November to April (higher river levels)</li>
+            <li>Low tide height below 1.1m at Limerick Dock</li>
+            <li>Ideal low tide is 0.7m or under</li>
+            <li>Weekday evenings (peak electricity demand)</li>
+            <li>Cold winter mornings (heating = more generation)</li>
+            <li>2–3 hours before low tide</li>
+            <li>The Ardnacrusha gates are open / generating</li>
+          </ul>
+        </div>
+        <div class="condition-block bad">
+          <span class="condition-tag">✗ Not ideal</span>
+          <ul>
+            <li>Summer (river is low, little generation)</li>
+            <li>Weekend early mornings (low electricity demand)</li>
+            <li>High tide or slack water</li>
+            <li>Low tide above 1.1m</li>
+            <li>During periods of drought or low rainfall</li>
+            <li>Rising tide — wave drops off quickly</li>
+          </ul>
+        </div>
+      </div>
+
+      <p style="margin-top: 2rem; font-size:0.9rem; color: var(--muted);">
+        <strong>Tide tables:</strong> Use the
+        <a href="https://www.sfpc.ie/weather/tide.html" target="_blank" style="color:var(--river-blue)">Shannon Foynes Port Company tide page</a>
+        and select <em>Limerick Dock</em>. Cross-reference with
+        <a href="https://www.irishtimes.com/weather/tides/" target="_blank" style="color:var(--river-blue)">Irish Times Tides</a>.
+        No official Ardnacrusha release schedule is publicly available, but
+        the local Limerick Kayak Club and paddling community will usually know —
+        check their Facebook group or message board.
+      </p>
+    </div>
+  </div>
+
+  <!-- INTERLUDE -->
+  <div class="interlude">
+    <h2>The wave rarely works before 8:30 on weekend mornings.<br>But on a good winter's evening? It's magic.</h2>
+    <p>
+      The falls are often paddled at night too, especially when the city council's
+      car park lights on river left are on. It's one of Limerick's great open secrets.
+    </p>
+    <a href="#paddlers" class="hero-btn">Information for Paddlers →</a>
+  </div>
+
+  <!-- PADDLERS -->
+  <div id="paddlers">
+    <div class="section">
+      <span class="section-label">● For Kayakers & Paddlers</span>
+      <div class="section-accent"></div>
+      <h2>The Two Waves</h2>
+      <p>
+        Curragower is a park-and-play spot through and through. There are slipways
+        both above and below the feature on river right, making access easy. Here's
+        what you'll find depending on conditions.
+      </p>
+
+      <div class="waves-split">
+        <div class="wave-card">
+          <span class="wave-badge">River Centre</span>
+          <h3>The Main Gower</h3>
+          <p>
+            The headline wave. It sits bang in the middle of the channel and forms
+            as water levels drop toward low tide. Deep and powerful — no fear of
+            power-flipping and hitting the bottom. Most freestyle moves are possible:
+            cartwheels, airwheels, bow stalls, flat spins, enders. A little trickier
+            to get on, but worth it when it's going.
+          </p>
+        </div>
+        <div class="wave-card">
+          <span class="wave-badge">River Right</span>
+          <h3>Lil' Gower</h3>
+          <p>
+            Forms on river right bank at higher water levels. Small and fast, with a
+            nice foam pile at the right level — great for aerial moves and learning
+            new skills. Excellent eddy service makes it beginner-friendly. At
+            exceptional flood levels it can grow to an astonishing 6-foot wave.
+            Only paddled when the main wave is washed out.
+          </p>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <h3>Local Club</h3>
+      <p>
+        There is a very strong local club —
+        <a href="https://limerickkayakclub.wordpress.com/" target="_blank" style="color:var(--river-blue)">Limerick Kayak Club</a>
+        — based in the city. If the wave is up, they will know about it.
+        The national freestyle championships have been held on the Gower, drawing
+        paddlers from all over Ireland. The club phone is 086-366-1946 (evenings).
+      </p>
+
+      <h3 style="margin-top:2rem;">Safety</h3>
+      <p>
+        The wave is deep — the rock ledge is well submerged during active conditions.
+        However, like all moving water, the falls deserve respect. Always paddle with
+        others, especially at higher flows. The Gower is an advanced feature; beginners
+        should paddle with experienced supervision. The Curragower Bar is immediately
+        adjacent for emergency warmth and soup.
+      </p>
+    </div>
+  </div>
+
+  <!-- GETTING THERE -->
+  <div id="location" class="section-cream">
+    <div class="section-wide">
+      <div class="location-split">
+        <div>
+          <span class="section-label">● Getting There</span>
+          <div class="section-accent"></div>
+          <h2>Location & Access</h2>
+
+          <div class="detail-row">
+            <span class="detail-icon">📍</span>
+            <div class="detail-text">
+              <strong>Address</strong>
+              Clancy's Strand, Limerick City — upstream of Sarsfield Bridge,
+              beneath King John's Castle. The wave is visible from the strand.
+            </div>
+          </div>
+
+          <div class="detail-row">
+            <span class="detail-icon">🅿️</span>
+            <div class="detail-text">
+              <strong>Parking</strong>
+              Park on Clancy's Strand road. Note: the Curragower Bar's car park
+              is private — please do not use it. Parking can be busy during events.
+              River left (opposite bank) car park is lit by council lights on weekday evenings.
+            </div>
+          </div>
+
+          <div class="detail-row">
+            <span class="detail-icon">🚶</span>
+            <div class="detail-text">
+              <strong>On Foot</strong>
+              From Limerick city centre, cross Sarsfield Bridge and turn left —
+              Clancy's Strand is a short riverside walk. The falls are in full view
+              from the strand.
+            </div>
+          </div>
+
+          <div class="detail-row">
+            <span class="detail-icon">🚤</span>
+            <div class="detail-text">
+              <strong>Slipway Access</strong>
+              There are slipways both above and below the feature on river right,
+              giving kayakers easy water access regardless of conditions.
+            </div>
+          </div>
+
+          <div class="detail-row">
+            <span class="detail-icon">🍺</span>
+            <div class="detail-text">
+              <strong>The Curragower Bar</strong>
+              Right beside the falls. Excellent for soup, toasties, and post-paddle
+              warmth. One of Limerick's finest spots.
+            </div>
+          </div>
+        </div>
+
+        <div class="map-placeholder">
+          <span class="map-icon">🗺️</span>
+          <strong>Curragower Falls</strong>
+          <span>Clancy's Strand, Limerick</span>
+          <a href="https://maps.google.com/?q=Curragower+Falls+Limerick" target="_blank"
+             style="color:var(--river-blue); font-size:0.85rem; margin-top:0.5rem;">
+            → Open in Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- USEFUL LINKS -->
+  <div id="links">
+    <div class="section-wide">
+      <div class="section" style="padding-top:0; padding-bottom:0; max-width:100%;">
+        <span class="section-label">● Useful Resources</span>
+        <div class="section-accent"></div>
+        <h2>Everything You Need</h2>
+        <p>The essential links for planning your visit or session at the Gower.</p>
+      </div>
+
+      <div class="links-grid">
+        <a href="https://www.sfpc.ie/weather/tide.html" target="_blank" class="link-card">
+          <div class="link-card-icon">🌊</div>
+          <h3>Limerick Dock Tides</h3>
+          <p>Shannon Foynes Port Company live tide tables. Always use Limerick Dock — not Tarbert.</p>
+        </a>
+        <a href="https://limerickkayakclub.wordpress.com/" target="_blank" class="link-card">
+          <div class="link-card-icon">🚣</div>
+          <h3>Limerick Kayak Club</h3>
+          <p>The local club. Best source for up-to-date wave conditions and community info.</p>
+        </a>
+        <a href="https://wiki.iww.ie/index.php/Curragower_Wave" target="_blank" class="link-card">
+          <div class="link-card-icon">📋</div>
+          <h3>Irish WhiteWater Wiki</h3>
+          <p>Technical guide to the Curragower Wave with access and level information.</p>
+        </a>
+        <a href="https://www.irishtimes.com/weather/tides/" target="_blank" class="link-card">
+          <div class="link-card-icon">📅</div>
+          <h3>Irish Times Tides</h3>
+          <p>A handy secondary tide reference for planning ahead.</p>
+        </a>
+        <a href="https://www.iww.ie/river_guide/river.php?id=936" target="_blank" class="link-card">
+          <div class="link-card-icon">🗺️</div>
+          <h3>IWW River Guide</h3>
+          <p>Irish WhiteWater's full guide to the Curragower play wave with access notes.</p>
+        </a>
+        <a href="https://en.wikipedia.org/wiki/Ardnacrusha" target="_blank" class="link-card">
+          <div class="link-card-icon">⚡</div>
+          <h3>Ardnacrusha Station</h3>
+          <p>Learn about the ESB hydro station that controls the Shannon's flow through Limerick.</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEWSLETTER -->
+  <div class="newsletter">
+    <div class="section-accent" style="margin: 0 auto 1.5rem;"></div>
+    <h2>Stay in the loop</h2>
+    <p>Get notified when conditions look good — tide updates, club events, and Gower news.</p>
+    <form class="newsletter-form" onsubmit="return false;">
+      <input type="email" placeholder="your@email.com" />
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <div class="footer-logo">Curragower Falls</div>
+      <div style="margin-top:0.4rem; font-size:0.82rem;">
+        Limerick City · River Shannon · Ireland
+      </div>
+    </div>
+    <div style="text-align:right; font-size:0.82rem; line-height:2;">
+      <a href="#about">About</a> &nbsp;·&nbsp;
+      <a href="#conditions">Conditions</a> &nbsp;·&nbsp;
+      <a href="#paddlers">Paddlers</a> &nbsp;·&nbsp;
+      <a href="#location">Getting There</a>
+      <br>
+      <span>Information provided in good faith. Always check live conditions before visiting.</span>
+    </div>
+  </footer>
+
+</body>
+</html>
