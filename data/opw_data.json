@@ -578,5 +578,15 @@
       "label": "Best",
       "colour": "#2e7d32"
     }
+  },
+  {
+    "datetime": "2026-03-22 02:25",
+    "level": 1.343,
+    "opw_band": {
+      "min": 1.24,
+      "max": 1.37,
+      "label": "Best",
+      "colour": "#2e7d32"
+    }
   }
 ]
