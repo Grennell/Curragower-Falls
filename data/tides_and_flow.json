@@ -1448,5 +1448,30 @@
       "label": "On",
       "colour": "#2e7d32"
     }
+  },
+  {
+    "datetime": "2026-03-24 03:59",
+    "tide_height": 0.67,
+    "tide_band": {
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
+    },
+    "opw": {
+      "datetime": "2026-03-24 04:00",
+      "level": 1.04,
+      "diff_minutes": 1.0
+    },
+    "opw_band": {
+      "min": 1.0,
+      "max": 1.12,
+      "label": "Good",
+      "colour": "#81c784"
+    },
+    "overall": {
+      "label": "On",
+      "colour": "#2e7d32"
+    }
   }
 ]
