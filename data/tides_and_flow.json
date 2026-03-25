@@ -1,55 +1,5 @@
 [
   {
-    "datetime": "2026-02-22 03:33",
-    "tide_height": 0.6,
-    "tide_band": {
-      "min": 0.0,
-      "max": 1.0,
-      "label": "Good",
-      "colour": "#4caf50"
-    },
-    "opw": {
-      "datetime": "2026-02-22 03:35",
-      "level": 1.667,
-      "diff_minutes": 2.0
-    },
-    "opw_band": {
-      "min": 1.49,
-      "max": 1.73,
-      "label": "High / surf",
-      "colour": "#64b5f6"
-    },
-    "overall": {
-      "label": "On",
-      "colour": "#2e7d32"
-    }
-  },
-  {
-    "datetime": "2026-02-22 16:02",
-    "tide_height": 0.64,
-    "tide_band": {
-      "min": 0.0,
-      "max": 1.0,
-      "label": "Good",
-      "colour": "#4caf50"
-    },
-    "opw": {
-      "datetime": "2026-02-22 16:00",
-      "level": 1.669,
-      "diff_minutes": 2.0
-    },
-    "opw_band": {
-      "min": 1.49,
-      "max": 1.73,
-      "label": "High / surf",
-      "colour": "#64b5f6"
-    },
-    "overall": {
-      "label": "On",
-      "colour": "#2e7d32"
-    }
-  },
-  {
     "datetime": "2026-02-23 04:22",
     "tide_height": 0.76,
     "tide_band": {
