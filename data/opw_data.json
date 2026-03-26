@@ -1,25 +1,5 @@
 [
   {
-    "datetime": "2026-02-23 04:20",
-    "level": 1.689,
-    "opw_band": {
-      "min": 1.49,
-      "max": 1.73,
-      "label": "High / surf",
-      "colour": "#64b5f6"
-    }
-  },
-  {
-    "datetime": "2026-02-23 16:55",
-    "level": 1.696,
-    "opw_band": {
-      "min": 1.49,
-      "max": 1.73,
-      "label": "High / surf",
-      "colour": "#64b5f6"
-    }
-  },
-  {
     "datetime": "2026-02-24 05:25",
     "level": 1.749,
     "opw_band": {
