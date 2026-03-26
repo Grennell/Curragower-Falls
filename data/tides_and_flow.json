@@ -1473,5 +1473,30 @@
       "label": "Marginal",
       "colour": "#f0c070"
     }
+  },
+  {
+    "datetime": "2026-03-26 19:24",
+    "tide_height": 1.37,
+    "tide_band": {
+      "min": 1.15,
+      "max": 99.0,
+      "label": "Too high",
+      "colour": "#e57373"
+    },
+    "opw": {
+      "datetime": "2026-03-26 19:25",
+      "level": 1.348,
+      "diff_minutes": 1.0
+    },
+    "opw_band": {
+      "min": 1.24,
+      "max": 1.37,
+      "label": "Best",
+      "colour": "#2e7d32"
+    },
+    "overall": {
+      "label": "Tide too high",
+      "colour": "#e57373"
+    }
   }
 ]
