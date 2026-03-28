@@ -1,16 +1,5 @@
 [
   {
-    "datetime": "2026-03-28 22:10",
-    "tide_height": 1.09,
-    "tide_band": {
-      "min": 1.0,
-      "max": 1.15,
-      "label": "Marginal",
-      "colour": "#f0c070"
-    },
-    "is_future": true
-  },
-  {
     "datetime": "2026-03-29 10:37",
     "tide_height": 0.73,
     "tide_band": {
