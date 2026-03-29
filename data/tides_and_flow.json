@@ -1,55 +1,5 @@
 [
   {
-    "datetime": "2026-02-26 08:25",
-    "tide_height": 1.27,
-    "tide_band": {
-      "min": 1.15,
-      "max": 99.0,
-      "label": "Too high",
-      "colour": "#e57373"
-    },
-    "opw": {
-      "datetime": "2026-02-26 08:25",
-      "level": 1.745,
-      "diff_minutes": 0.0
-    },
-    "opw_band": {
-      "min": 1.73,
-      "max": 1.98,
-      "label": "High green",
-      "colour": "#1976d2"
-    },
-    "overall": {
-      "label": "Tide too high",
-      "colour": "#e57373"
-    }
-  },
-  {
-    "datetime": "2026-02-26 21:06",
-    "tide_height": 1.34,
-    "tide_band": {
-      "min": 1.15,
-      "max": 99.0,
-      "label": "Too high",
-      "colour": "#e57373"
-    },
-    "opw": {
-      "datetime": "2026-02-26 21:05",
-      "level": 1.763,
-      "diff_minutes": 1.0
-    },
-    "opw_band": {
-      "min": 1.73,
-      "max": 1.98,
-      "label": "High green",
-      "colour": "#1976d2"
-    },
-    "overall": {
-      "label": "Tide too high",
-      "colour": "#e57373"
-    }
-  },
-  {
     "datetime": "2026-02-27 09:55",
     "tide_height": 1.11,
     "tide_band": {
@@ -1484,9 +1434,9 @@
       "colour": "#f0c070"
     },
     "opw": {
-      "datetime": "2026-03-28 22:00",
-      "level": 1.342,
-      "diff_minutes": 10.0
+      "datetime": "2026-03-28 22:10",
+      "level": 1.334,
+      "diff_minutes": 0.0
     },
     "opw_band": {
       "min": 1.24,
