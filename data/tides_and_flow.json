@@ -1,55 +1,5 @@
 [
   {
-    "datetime": "2026-02-27 09:55",
-    "tide_height": 1.11,
-    "tide_band": {
-      "min": 1.0,
-      "max": 1.15,
-      "label": "Marginal",
-      "colour": "#f0c070"
-    },
-    "opw": {
-      "datetime": "2026-02-27 09:55",
-      "level": 1.742,
-      "diff_minutes": 0.0
-    },
-    "opw_band": {
-      "min": 1.73,
-      "max": 1.98,
-      "label": "High green",
-      "colour": "#1976d2"
-    },
-    "overall": {
-      "label": "Marginal",
-      "colour": "#f0c070"
-    }
-  },
-  {
-    "datetime": "2026-02-27 22:18",
-    "tide_height": 1.15,
-    "tide_band": {
-      "min": 1.15,
-      "max": 99.0,
-      "label": "Too high",
-      "colour": "#e57373"
-    },
-    "opw": {
-      "datetime": "2026-02-27 22:20",
-      "level": 1.727,
-      "diff_minutes": 2.0
-    },
-    "opw_band": {
-      "min": 1.49,
-      "max": 1.73,
-      "label": "High / surf",
-      "colour": "#64b5f6"
-    },
-    "overall": {
-      "label": "Tide too high",
-      "colour": "#e57373"
-    }
-  },
-  {
     "datetime": "2026-02-28 10:51",
     "tide_height": 0.83,
     "tide_band": {
@@ -1493,6 +1443,56 @@
       "max": 1.37,
       "label": "Best",
       "colour": "#2e7d32"
+    },
+    "overall": {
+      "label": "On",
+      "colour": "#2e7d32"
+    }
+  },
+  {
+    "datetime": "2026-03-29 22:52",
+    "tide_height": 0.83,
+    "tide_band": {
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
+    },
+    "opw": {
+      "datetime": "2026-03-29 22:50",
+      "level": 1.37,
+      "diff_minutes": 2.0
+    },
+    "opw_band": {
+      "min": 1.37,
+      "max": 1.49,
+      "label": "High / good",
+      "colour": "#26a69a"
+    },
+    "overall": {
+      "label": "On",
+      "colour": "#2e7d32"
+    }
+  },
+  {
+    "datetime": "2026-03-29 23:52",
+    "tide_height": 0.83,
+    "tide_band": {
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
+    },
+    "opw": {
+      "datetime": "2026-03-29 23:50",
+      "level": 1.38,
+      "diff_minutes": 2.0
+    },
+    "opw_band": {
+      "min": 1.37,
+      "max": 1.49,
+      "label": "High / good",
+      "colour": "#26a69a"
     },
     "overall": {
       "label": "On",
