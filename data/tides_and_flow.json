@@ -1,55 +1,5 @@
 [
   {
-    "datetime": "2026-03-01 11:32",
-    "tide_height": 0.55,
-    "tide_band": {
-      "min": 0.0,
-      "max": 1.0,
-      "label": "Good",
-      "colour": "#4caf50"
-    },
-    "opw": {
-      "datetime": "2026-03-01 11:30",
-      "level": 1.726,
-      "diff_minutes": 2.0
-    },
-    "opw_band": {
-      "min": 1.49,
-      "max": 1.73,
-      "label": "High / surf",
-      "colour": "#64b5f6"
-    },
-    "overall": {
-      "label": "On",
-      "colour": "#2e7d32"
-    }
-  },
-  {
-    "datetime": "2026-03-01 23:44",
-    "tide_height": 0.66,
-    "tide_band": {
-      "min": 0.0,
-      "max": 1.0,
-      "label": "Good",
-      "colour": "#4caf50"
-    },
-    "opw": {
-      "datetime": "2026-03-01 23:45",
-      "level": 1.67,
-      "diff_minutes": 1.0
-    },
-    "opw_band": {
-      "min": 1.49,
-      "max": 1.73,
-      "label": "High / surf",
-      "colour": "#64b5f6"
-    },
-    "overall": {
-      "label": "On",
-      "colour": "#2e7d32"
-    }
-  },
-  {
     "datetime": "2026-03-02 12:07",
     "tide_height": 0.34,
     "tide_band": {
@@ -1587,6 +1537,56 @@
       "datetime": "2026-03-31 12:45",
       "level": 1.114,
       "diff_minutes": 2.0
+    },
+    "opw_band": {
+      "min": 1.0,
+      "max": 1.12,
+      "label": "Good",
+      "colour": "#81c784"
+    },
+    "overall": {
+      "label": "On",
+      "colour": "#2e7d32"
+    }
+  },
+  {
+    "datetime": "2026-03-31 23:59",
+    "tide_height": 0.47,
+    "tide_band": {
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
+    },
+    "opw": {
+      "datetime": "2026-04-01 00:00",
+      "level": 1.11,
+      "diff_minutes": 1.0
+    },
+    "opw_band": {
+      "min": 1.0,
+      "max": 1.12,
+      "label": "Good",
+      "colour": "#81c784"
+    },
+    "overall": {
+      "label": "On",
+      "colour": "#2e7d32"
+    }
+  },
+  {
+    "datetime": "2026-04-01 00:59",
+    "tide_height": 0.47,
+    "tide_band": {
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
+    },
+    "opw": {
+      "datetime": "2026-04-01 01:00",
+      "level": 1.098,
+      "diff_minutes": 1.0
     },
     "opw_band": {
       "min": 1.0,
