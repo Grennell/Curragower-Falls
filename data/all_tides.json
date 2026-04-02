@@ -745,7 +745,7 @@
       "label": "Good",
       "colour": "#4caf50"
     },
-    "is_future": true
+    "is_future": false
   },
   {
     "datetime": "2026-04-02 13:45",
@@ -756,7 +756,7 @@
       "label": "Good",
       "colour": "#4caf50"
     },
-    "is_future": true
+    "is_future": false
   },
   {
     "datetime": "2026-04-03 00:54",
