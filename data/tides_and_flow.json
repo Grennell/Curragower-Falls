@@ -2023,5 +2023,55 @@
       "label": "Tide too high",
       "colour": "#e57373"
     }
+  },
+  {
+    "datetime": "2026-04-10 06:07",
+    "tide_height": 1.37,
+    "tide_band": {
+      "min": 1.15,
+      "max": 99.0,
+      "label": "Too high",
+      "colour": "#e57373"
+    },
+    "opw": {
+      "datetime": "2026-04-10 06:05",
+      "level": 1.095,
+      "diff_minutes": 2.0
+    },
+    "opw_band": {
+      "min": 1.0,
+      "max": 1.12,
+      "label": "Good",
+      "colour": "#81c784"
+    },
+    "overall": {
+      "label": "Tide too high",
+      "colour": "#e57373"
+    }
+  },
+  {
+    "datetime": "2026-04-10 07:07",
+    "tide_height": 1.37,
+    "tide_band": {
+      "min": 1.15,
+      "max": 99.0,
+      "label": "Too high",
+      "colour": "#e57373"
+    },
+    "opw": {
+      "datetime": "2026-04-10 06:30",
+      "level": 1.102,
+      "diff_minutes": 37.0
+    },
+    "opw_band": {
+      "min": 1.0,
+      "max": 1.12,
+      "label": "Good",
+      "colour": "#81c784"
+    },
+    "overall": {
+      "label": "Tide too high",
+      "colour": "#e57373"
+    }
   }
 ]
