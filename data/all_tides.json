@@ -932,7 +932,7 @@
       "label": "Too high",
       "colour": "#e57373"
     },
-    "is_future": true
+    "is_future": false
   },
   {
     "datetime": "2026-04-11 20:45",
