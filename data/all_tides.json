@@ -965,7 +965,7 @@
       "label": "Marginal",
       "colour": "#f0c070"
     },
-    "is_future": true
+    "is_future": false
   },
   {
     "datetime": "2026-04-13 11:05",
@@ -976,7 +976,7 @@
       "label": "Marginal",
       "colour": "#f0c070"
     },
-    "is_future": true
+    "is_future": false
   },
   {
     "datetime": "2026-04-13 22:26",
