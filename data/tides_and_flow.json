@@ -2223,5 +2223,30 @@
       "label": "Marginal",
       "colour": "#f0c070"
     }
+  },
+  {
+    "datetime": "2026-04-13 22:26",
+    "tide_height": 1.02,
+    "tide_band": {
+      "min": 1.0,
+      "max": 1.15,
+      "label": "Marginal",
+      "colour": "#f0c070"
+    },
+    "opw": {
+      "datetime": "2026-04-13 22:15",
+      "level": 1.097,
+      "diff_minutes": 11.0
+    },
+    "opw_band": {
+      "min": 1.0,
+      "max": 1.12,
+      "label": "Good",
+      "colour": "#81c784"
+    },
+    "overall": {
+      "label": "Marginal",
+      "colour": "#f0c070"
+    }
   }
 ]
