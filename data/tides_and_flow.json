@@ -1,55 +1,5 @@
 [
   {
-    "datetime": "2026-03-14 10:02",
-    "tide_height": 1.32,
-    "tide_band": {
-      "min": 1.15,
-      "max": 99.0,
-      "label": "Too high",
-      "colour": "#e57373"
-    },
-    "opw": {
-      "datetime": "2026-03-14 10:00",
-      "level": 1.439,
-      "diff_minutes": 2.0
-    },
-    "opw_band": {
-      "min": 1.37,
-      "max": 1.49,
-      "label": "High / good",
-      "colour": "#26a69a"
-    },
-    "overall": {
-      "label": "Tide too high",
-      "colour": "#e57373"
-    }
-  },
-  {
-    "datetime": "2026-03-14 22:24",
-    "tide_height": 1.31,
-    "tide_band": {
-      "min": 1.15,
-      "max": 99.0,
-      "label": "Too high",
-      "colour": "#e57373"
-    },
-    "opw": {
-      "datetime": "2026-03-14 22:25",
-      "level": 1.389,
-      "diff_minutes": 1.0
-    },
-    "opw_band": {
-      "min": 1.37,
-      "max": 1.49,
-      "label": "High / good",
-      "colour": "#26a69a"
-    },
-    "overall": {
-      "label": "Tide too high",
-      "colour": "#e57373"
-    }
-  },
-  {
     "datetime": "2026-03-15 10:45",
     "tide_height": 1.06,
     "tide_band": {
@@ -2234,15 +2184,40 @@
       "colour": "#f0c070"
     },
     "opw": {
-      "datetime": "2026-04-13 22:15",
-      "level": 1.097,
-      "diff_minutes": 11.0
+      "datetime": "2026-04-13 22:25",
+      "level": 1.046,
+      "diff_minutes": 1.0
     },
     "opw_band": {
       "min": 1.0,
       "max": 1.12,
       "label": "Good",
       "colour": "#81c784"
+    },
+    "overall": {
+      "label": "Marginal",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-13 23:26",
+    "tide_height": 1.02,
+    "tide_band": {
+      "min": 1.0,
+      "max": 1.15,
+      "label": "Marginal",
+      "colour": "#f0c070"
+    },
+    "opw": {
+      "datetime": "2026-04-13 23:25",
+      "level": 0.891,
+      "diff_minutes": 1.0
+    },
+    "opw_band": {
+      "min": 0.88,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#aed6a8"
     },
     "overall": {
       "label": "Marginal",
