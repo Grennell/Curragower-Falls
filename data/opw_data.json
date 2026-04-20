@@ -998,5 +998,25 @@
       "label": "Good",
       "colour": "#4caf50"
     }
+  },
+  {
+    "datetime": "2026-04-20 02:00",
+    "level": 1.108,
+    "opw_band": {
+      "min": 1.0,
+      "max": 1.12,
+      "label": "Good",
+      "colour": "#81c784"
+    }
+  },
+  {
+    "datetime": "2026-04-20 03:00",
+    "level": 1.109,
+    "opw_band": {
+      "min": 1.0,
+      "max": 1.12,
+      "label": "Good",
+      "colour": "#81c784"
+    }
   }
 ]
