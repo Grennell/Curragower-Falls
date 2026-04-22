@@ -1058,5 +1058,15 @@
       "label": "Low & shallow",
       "colour": "#f0c070"
     }
+  },
+  {
+    "datetime": "2026-04-22 15:45",
+    "level": 0.821,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
   }
 ]
