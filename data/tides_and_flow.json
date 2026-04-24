@@ -2709,9 +2709,9 @@
       "colour": "#4caf50"
     },
     "opw": {
-      "datetime": "2026-04-24 06:00",
-      "level": 0.813,
-      "diff_minutes": 22.0
+      "datetime": "2026-04-24 06:20",
+      "level": 0.817,
+      "diff_minutes": 2.0
     },
     "opw_band": {
       "min": 0.75,
@@ -2734,9 +2734,9 @@
       "colour": "#4caf50"
     },
     "opw": {
-      "datetime": "2026-04-24 06:00",
-      "level": 0.813,
-      "diff_minutes": 82.0
+      "datetime": "2026-04-24 07:20",
+      "level": 0.819,
+      "diff_minutes": 2.0
     },
     "opw_band": {
       "min": 0.75,
