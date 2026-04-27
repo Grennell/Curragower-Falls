@@ -2848,5 +2848,55 @@
       "label": "Marginal",
       "colour": "#f0c070"
     }
+  },
+  {
+    "datetime": "2026-04-27 10:07",
+    "tide_height": 0.71,
+    "tide_band": {
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
+    },
+    "opw": {
+      "datetime": "2026-04-27 10:00",
+      "level": 0.812,
+      "diff_minutes": 7.0
+    },
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    },
+    "overall": {
+      "label": "On",
+      "colour": "#2e7d32"
+    }
+  },
+  {
+    "datetime": "2026-04-27 11:07",
+    "tide_height": 0.71,
+    "tide_band": {
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
+    },
+    "opw": {
+      "datetime": "2026-04-27 10:00",
+      "level": 0.812,
+      "diff_minutes": 67.0
+    },
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    },
+    "overall": {
+      "label": "On",
+      "colour": "#2e7d32"
+    }
   }
 ]
