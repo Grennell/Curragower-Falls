@@ -1,25 +1,5 @@
 [
   {
-    "datetime": "2026-03-28 09:45",
-    "level": 1.358,
-    "opw_band": {
-      "min": 1.24,
-      "max": 1.37,
-      "label": "Best",
-      "colour": "#2e7d32"
-    }
-  },
-  {
-    "datetime": "2026-03-28 22:10",
-    "level": 1.334,
-    "opw_band": {
-      "min": 1.24,
-      "max": 1.37,
-      "label": "Best",
-      "colour": "#2e7d32"
-    }
-  },
-  {
     "datetime": "2026-03-29 10:35",
     "level": 1.359,
     "opw_band": {
@@ -1161,6 +1141,16 @@
   },
   {
     "datetime": "2026-04-27 22:25",
+    "level": 0.807,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-27 23:25",
     "level": 0.807,
     "opw_band": {
       "min": 0.75,
