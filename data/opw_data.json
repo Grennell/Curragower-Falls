@@ -1160,8 +1160,18 @@
     }
   },
   {
-    "datetime": "2026-04-28 10:15",
-    "level": 0.812,
+    "datetime": "2026-04-28 10:45",
+    "level": 0.809,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-28 11:45",
+    "level": 0.805,
     "opw_band": {
       "min": 0.75,
       "max": 0.88,
