@@ -2909,9 +2909,9 @@
       "colour": "#4caf50"
     },
     "opw": {
-      "datetime": "2026-04-30 00:30",
-      "level": 0.56,
-      "diff_minutes": 5.0
+      "datetime": "2026-04-30 00:35",
+      "level": 0.558,
+      "diff_minutes": 0.0
     },
     "opw_band": {
       "min": 0.0,
