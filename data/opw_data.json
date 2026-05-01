@@ -1170,7 +1170,17 @@
     }
   },
   {
-    "datetime": "2026-05-01 12:15",
+    "datetime": "2026-05-01 12:20",
+    "level": 0.824,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-05-01 13:20",
     "level": 0.826,
     "opw_band": {
       "min": 0.75,
