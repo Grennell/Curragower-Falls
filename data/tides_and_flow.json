@@ -2973,5 +2973,30 @@
       "label": "Marginal",
       "colour": "#f0c070"
     }
+  },
+  {
+    "datetime": "2026-05-06 16:14",
+    "tide_height": 1.04,
+    "tide_band": {
+      "min": 1.0,
+      "max": 1.15,
+      "label": "Marginal",
+      "colour": "#f0c070"
+    },
+    "opw": {
+      "datetime": "2026-05-06 16:15",
+      "level": 0.831,
+      "diff_minutes": 1.0
+    },
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    },
+    "overall": {
+      "label": "Marginal",
+      "colour": "#f0c070"
+    }
   }
 ]
