@@ -264,8 +264,8 @@
     "is_future": true
   },
   {
-    "datetime": "2026-05-13 02:55",
-    "tide_height": 0.82,
+    "datetime": "2026-05-13 10:00",
+    "tide_height": 0.72,
     "tide_band": {
       "min": 0.0,
       "max": 1.0,
@@ -275,8 +275,8 @@
     "is_future": true
   },
   {
-    "datetime": "2026-05-13 03:55",
-    "tide_height": 0.82,
+    "datetime": "2026-05-13 11:00",
+    "tide_height": 0.72,
     "tide_band": {
       "min": 0.0,
       "max": 1.0,
@@ -286,24 +286,68 @@
     "is_future": true
   },
   {
-    "datetime": "2026-05-13 15:14",
-    "tide_height": 1.04,
+    "datetime": "2026-05-13 22:27",
+    "tide_height": 0.76,
     "tide_band": {
-      "min": 1.0,
-      "max": 1.15,
-      "label": "Marginal",
-      "colour": "#f0c070"
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
     },
     "is_future": true
   },
   {
-    "datetime": "2026-05-13 16:14",
-    "tide_height": 1.04,
+    "datetime": "2026-05-13 23:27",
+    "tide_height": 0.76,
     "tide_band": {
-      "min": 1.0,
-      "max": 1.15,
-      "label": "Marginal",
-      "colour": "#f0c070"
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
+    },
+    "is_future": true
+  },
+  {
+    "datetime": "2026-05-14 03:38",
+    "tide_height": 0.92,
+    "tide_band": {
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
+    },
+    "is_future": true
+  },
+  {
+    "datetime": "2026-05-14 04:38",
+    "tide_height": 0.92,
+    "tide_band": {
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
+    },
+    "is_future": true
+  },
+  {
+    "datetime": "2026-05-14 16:01",
+    "tide_height": 1.16,
+    "tide_band": {
+      "min": 1.15,
+      "max": 99.0,
+      "label": "Too high",
+      "colour": "#e57373"
+    },
+    "is_future": true
+  },
+  {
+    "datetime": "2026-05-14 17:01",
+    "tide_height": 1.16,
+    "tide_band": {
+      "min": 1.15,
+      "max": 99.0,
+      "label": "Too high",
+      "colour": "#e57373"
     },
     "is_future": true
   }
