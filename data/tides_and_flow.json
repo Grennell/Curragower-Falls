@@ -2948,5 +2948,30 @@
       "label": "No wave",
       "colour": "#d0ccc8"
     }
+  },
+  {
+    "datetime": "2026-05-08 16:57",
+    "tide_height": 1.28,
+    "tide_band": {
+      "min": 1.15,
+      "max": 99.0,
+      "label": "Too high",
+      "colour": "#e57373"
+    },
+    "opw": {
+      "datetime": "2026-05-08 16:30",
+      "level": 0.821,
+      "diff_minutes": 27.0
+    },
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    },
+    "overall": {
+      "label": "Tide too high",
+      "colour": "#e57373"
+    }
   }
 ]
