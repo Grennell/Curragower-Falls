@@ -1,5 +1,425 @@
 [
   {
+    "datetime": "2026-04-14 10:40",
+    "level": 0.972,
+    "opw_band": {
+      "min": 0.88,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#aed6a8"
+    }
+  },
+  {
+    "datetime": "2026-04-14 11:40",
+    "level": 0.975,
+    "opw_band": {
+      "min": 0.88,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#aed6a8"
+    }
+  },
+  {
+    "datetime": "2026-04-14 23:00",
+    "level": 0.891,
+    "opw_band": {
+      "min": 0.88,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#aed6a8"
+    }
+  },
+  {
+    "datetime": "2026-04-15 00:00",
+    "level": 0.862,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-15 11:15",
+    "level": 1.229,
+    "opw_band": {
+      "min": 1.12,
+      "max": 1.24,
+      "label": "Good",
+      "colour": "#4caf50"
+    }
+  },
+  {
+    "datetime": "2026-04-15 12:15",
+    "level": 1.102,
+    "opw_band": {
+      "min": 1.0,
+      "max": 1.12,
+      "label": "Good",
+      "colour": "#81c784"
+    }
+  },
+  {
+    "datetime": "2026-04-15 23:35",
+    "level": 0.911,
+    "opw_band": {
+      "min": 0.88,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#aed6a8"
+    }
+  },
+  {
+    "datetime": "2026-04-16 00:35",
+    "level": 0.905,
+    "opw_band": {
+      "min": 0.88,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#aed6a8"
+    }
+  },
+  {
+    "datetime": "2026-04-16 11:45",
+    "level": 1.167,
+    "opw_band": {
+      "min": 1.12,
+      "max": 1.24,
+      "label": "Good",
+      "colour": "#4caf50"
+    }
+  },
+  {
+    "datetime": "2026-04-16 12:45",
+    "level": 1.167,
+    "opw_band": {
+      "min": 1.12,
+      "max": 1.24,
+      "label": "Good",
+      "colour": "#4caf50"
+    }
+  },
+  {
+    "datetime": "2026-04-17 00:05",
+    "level": 1.146,
+    "opw_band": {
+      "min": 1.12,
+      "max": 1.24,
+      "label": "Good",
+      "colour": "#4caf50"
+    }
+  },
+  {
+    "datetime": "2026-04-17 01:05",
+    "level": 1.146,
+    "opw_band": {
+      "min": 1.12,
+      "max": 1.24,
+      "label": "Good",
+      "colour": "#4caf50"
+    }
+  },
+  {
+    "datetime": "2026-04-17 12:20",
+    "level": 1.141,
+    "opw_band": {
+      "min": 1.12,
+      "max": 1.24,
+      "label": "Good",
+      "colour": "#4caf50"
+    }
+  },
+  {
+    "datetime": "2026-04-17 13:20",
+    "level": 1.137,
+    "opw_band": {
+      "min": 1.12,
+      "max": 1.24,
+      "label": "Good",
+      "colour": "#4caf50"
+    }
+  },
+  {
+    "datetime": "2026-04-18 00:35",
+    "level": 1.141,
+    "opw_band": {
+      "min": 1.12,
+      "max": 1.24,
+      "label": "Good",
+      "colour": "#4caf50"
+    }
+  },
+  {
+    "datetime": "2026-04-18 01:35",
+    "level": 1.136,
+    "opw_band": {
+      "min": 1.12,
+      "max": 1.24,
+      "label": "Good",
+      "colour": "#4caf50"
+    }
+  },
+  {
+    "datetime": "2026-04-18 12:50",
+    "level": 1.131,
+    "opw_band": {
+      "min": 1.12,
+      "max": 1.24,
+      "label": "Good",
+      "colour": "#4caf50"
+    }
+  },
+  {
+    "datetime": "2026-04-18 13:50",
+    "level": 1.13,
+    "opw_band": {
+      "min": 1.12,
+      "max": 1.24,
+      "label": "Good",
+      "colour": "#4caf50"
+    }
+  },
+  {
+    "datetime": "2026-04-19 01:15",
+    "level": 1.12,
+    "opw_band": {
+      "min": 1.12,
+      "max": 1.24,
+      "label": "Good",
+      "colour": "#4caf50"
+    }
+  },
+  {
+    "datetime": "2026-04-19 02:15",
+    "level": 1.123,
+    "opw_band": {
+      "min": 1.12,
+      "max": 1.24,
+      "label": "Good",
+      "colour": "#4caf50"
+    }
+  },
+  {
+    "datetime": "2026-04-19 13:35",
+    "level": 1.117,
+    "opw_band": {
+      "min": 1.0,
+      "max": 1.12,
+      "label": "Good",
+      "colour": "#81c784"
+    }
+  },
+  {
+    "datetime": "2026-04-19 14:35",
+    "level": 1.122,
+    "opw_band": {
+      "min": 1.12,
+      "max": 1.24,
+      "label": "Good",
+      "colour": "#4caf50"
+    }
+  },
+  {
+    "datetime": "2026-04-20 02:00",
+    "level": 1.108,
+    "opw_band": {
+      "min": 1.0,
+      "max": 1.12,
+      "label": "Good",
+      "colour": "#81c784"
+    }
+  },
+  {
+    "datetime": "2026-04-20 03:00",
+    "level": 1.109,
+    "opw_band": {
+      "min": 1.0,
+      "max": 1.12,
+      "label": "Good",
+      "colour": "#81c784"
+    }
+  },
+  {
+    "datetime": "2026-04-20 14:25",
+    "level": 0.838,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-20 15:25",
+    "level": 0.835,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-21 02:55",
+    "level": 0.828,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-21 03:55",
+    "level": 0.832,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-21 15:15",
+    "level": 0.832,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-21 16:15",
+    "level": 0.828,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-22 03:45",
+    "level": 0.828,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-22 04:45",
+    "level": 0.822,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-22 16:15",
+    "level": 0.818,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-22 17:15",
+    "level": 0.821,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-23 04:55",
+    "level": 0.815,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-23 05:55",
+    "level": 0.816,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-23 17:30",
+    "level": 0.814,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-23 18:30",
+    "level": 0.816,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-24 06:20",
+    "level": 0.817,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-24 07:20",
+    "level": 0.819,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-24 19:15",
+    "level": 0.813,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-24 20:15",
+    "level": 0.808,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
     "datetime": "2026-04-25 08:10",
     "level": 0.813,
     "opw_band": {
@@ -31,6 +451,186 @@
   },
   {
     "datetime": "2026-04-25 21:50",
+    "level": 0.81,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-26 09:20",
+    "level": 0.809,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-26 10:20",
+    "level": 0.816,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-26 21:45",
+    "level": 0.81,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-26 22:45",
+    "level": 0.808,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-27 10:05",
+    "level": 0.808,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-27 11:05",
+    "level": 0.812,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-27 22:25",
+    "level": 0.807,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-27 23:25",
+    "level": 0.807,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-28 10:45",
+    "level": 0.809,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-28 11:45",
+    "level": 0.805,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-28 23:00",
+    "level": 0.81,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-29 00:00",
+    "level": 0.808,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-29 11:20",
+    "level": 0.81,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-29 12:20",
+    "level": 0.812,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-29 23:35",
+    "level": 0.735,
+    "opw_band": {
+      "min": 0.0,
+      "max": 0.75,
+      "label": "Too low",
+      "colour": "#d0ccc8"
+    }
+  },
+  {
+    "datetime": "2026-04-30 00:35",
+    "level": 0.558,
+    "opw_band": {
+      "min": 0.0,
+      "max": 0.75,
+      "label": "Too low",
+      "colour": "#d0ccc8"
+    }
+  },
+  {
+    "datetime": "2026-04-30 11:50",
+    "level": 0.805,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-04-30 12:50",
     "level": 0.81,
     "opw_band": {
       "min": 0.75,
@@ -72,6 +672,46 @@
   {
     "datetime": "2026-05-01 13:20",
     "level": 0.826,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-05-02 00:30",
+    "level": 0.559,
+    "opw_band": {
+      "min": 0.0,
+      "max": 0.75,
+      "label": "Too low",
+      "colour": "#d0ccc8"
+    }
+  },
+  {
+    "datetime": "2026-05-02 01:30",
+    "level": 0.552,
+    "opw_band": {
+      "min": 0.0,
+      "max": 0.75,
+      "label": "Too low",
+      "colour": "#d0ccc8"
+    }
+  },
+  {
+    "datetime": "2026-05-02 12:45",
+    "level": 0.832,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-05-02 13:45",
+    "level": 0.827,
     "opw_band": {
       "min": 0.75,
       "max": 0.88,
@@ -352,6 +992,166 @@
   {
     "datetime": "2026-05-09 19:15",
     "level": 0.543,
+    "opw_band": {
+      "min": 0.0,
+      "max": 0.75,
+      "label": "Too low",
+      "colour": "#d0ccc8"
+    }
+  },
+  {
+    "datetime": "2026-05-10 06:55",
+    "level": 0.538,
+    "opw_band": {
+      "min": 0.0,
+      "max": 0.75,
+      "label": "Too low",
+      "colour": "#d0ccc8"
+    }
+  },
+  {
+    "datetime": "2026-05-10 07:55",
+    "level": 0.541,
+    "opw_band": {
+      "min": 0.0,
+      "max": 0.75,
+      "label": "Too low",
+      "colour": "#d0ccc8"
+    }
+  },
+  {
+    "datetime": "2026-05-10 19:50",
+    "level": 0.532,
+    "opw_band": {
+      "min": 0.0,
+      "max": 0.75,
+      "label": "Too low",
+      "colour": "#d0ccc8"
+    }
+  },
+  {
+    "datetime": "2026-05-10 20:50",
+    "level": 0.535,
+    "opw_band": {
+      "min": 0.0,
+      "max": 0.75,
+      "label": "Too low",
+      "colour": "#d0ccc8"
+    }
+  },
+  {
+    "datetime": "2026-05-11 08:15",
+    "level": 0.541,
+    "opw_band": {
+      "min": 0.0,
+      "max": 0.75,
+      "label": "Too low",
+      "colour": "#d0ccc8"
+    }
+  },
+  {
+    "datetime": "2026-05-11 09:15",
+    "level": 0.539,
+    "opw_band": {
+      "min": 0.0,
+      "max": 0.75,
+      "label": "Too low",
+      "colour": "#d0ccc8"
+    }
+  },
+  {
+    "datetime": "2026-05-11 20:55",
+    "level": 0.538,
+    "opw_band": {
+      "min": 0.0,
+      "max": 0.75,
+      "label": "Too low",
+      "colour": "#d0ccc8"
+    }
+  },
+  {
+    "datetime": "2026-05-11 21:55",
+    "level": 0.539,
+    "opw_band": {
+      "min": 0.0,
+      "max": 0.75,
+      "label": "Too low",
+      "colour": "#d0ccc8"
+    }
+  },
+  {
+    "datetime": "2026-05-12 09:15",
+    "level": 0.537,
+    "opw_band": {
+      "min": 0.0,
+      "max": 0.75,
+      "label": "Too low",
+      "colour": "#d0ccc8"
+    }
+  },
+  {
+    "datetime": "2026-05-12 10:15",
+    "level": 0.545,
+    "opw_band": {
+      "min": 0.0,
+      "max": 0.75,
+      "label": "Too low",
+      "colour": "#d0ccc8"
+    }
+  },
+  {
+    "datetime": "2026-05-12 21:45",
+    "level": 0.536,
+    "opw_band": {
+      "min": 0.0,
+      "max": 0.75,
+      "label": "Too low",
+      "colour": "#d0ccc8"
+    }
+  },
+  {
+    "datetime": "2026-05-12 22:45",
+    "level": 0.52,
+    "opw_band": {
+      "min": 0.0,
+      "max": 0.75,
+      "label": "Too low",
+      "colour": "#d0ccc8"
+    }
+  },
+  {
+    "datetime": "2026-05-13 10:00",
+    "level": 0.549,
+    "opw_band": {
+      "min": 0.0,
+      "max": 0.75,
+      "label": "Too low",
+      "colour": "#d0ccc8"
+    }
+  },
+  {
+    "datetime": "2026-05-13 11:00",
+    "level": 0.528,
+    "opw_band": {
+      "min": 0.0,
+      "max": 0.75,
+      "label": "Too low",
+      "colour": "#d0ccc8"
+    }
+  },
+  {
+    "datetime": "2026-05-13 22:25",
+    "level": 0.492,
+    "opw_band": {
+      "min": 0.0,
+      "max": 0.75,
+      "label": "Too low",
+      "colour": "#d0ccc8"
+    }
+  },
+  {
+    "datetime": "2026-05-13 23:25",
+    "level": 0.437,
     "opw_band": {
       "min": 0.0,
       "max": 0.75,
