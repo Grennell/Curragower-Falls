@@ -2934,9 +2934,9 @@
       "colour": "#4caf50"
     },
     "opw": {
-      "datetime": "2026-05-17 01:00",
+      "datetime": "2026-05-17 01:20",
       "level": 0.436,
-      "diff_minutes": 18.0
+      "diff_minutes": 2.0
     },
     "opw_band": {
       "min": 0.0,
