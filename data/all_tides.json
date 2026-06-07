@@ -1306,7 +1306,7 @@
       "label": "Marginal",
       "colour": "#f0c070"
     },
-    "is_future": true
+    "is_future": false
   },
   {
     "datetime": "2026-06-07 18:34",
@@ -1317,7 +1317,7 @@
       "label": "Marginal",
       "colour": "#f0c070"
     },
-    "is_future": true
+    "is_future": false
   },
   {
     "datetime": "2026-06-08 06:07",
