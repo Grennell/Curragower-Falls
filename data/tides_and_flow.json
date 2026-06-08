@@ -2959,9 +2959,9 @@
       "colour": "#e57373"
     },
     "opw": {
-      "datetime": "2026-06-08 18:45",
-      "level": 0.872,
-      "diff_minutes": 3.0
+      "datetime": "2026-06-08 18:50",
+      "level": 0.864,
+      "diff_minutes": 2.0
     },
     "opw_band": {
       "min": 0.75,
@@ -2984,9 +2984,9 @@
       "colour": "#e57373"
     },
     "opw": {
-      "datetime": "2026-06-08 18:45",
-      "level": 0.872,
-      "diff_minutes": 63.0
+      "datetime": "2026-06-08 19:50",
+      "level": 0.828,
+      "diff_minutes": 2.0
     },
     "opw_band": {
       "min": 0.75,
