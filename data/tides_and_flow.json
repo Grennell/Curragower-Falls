@@ -1,105 +1,5 @@
 [
   {
-    "datetime": "2026-05-12 09:14",
-    "tide_height": 0.92,
-    "tide_band": {
-      "min": 0.0,
-      "max": 1.0,
-      "label": "Good",
-      "colour": "#4caf50"
-    },
-    "opw": {
-      "datetime": "2026-05-12 09:15",
-      "level": 0.537,
-      "diff_minutes": 1.0
-    },
-    "opw_band": {
-      "min": 0.0,
-      "max": 0.75,
-      "label": "Too low",
-      "colour": "#d0ccc8"
-    },
-    "overall": {
-      "label": "No wave",
-      "colour": "#d0ccc8"
-    }
-  },
-  {
-    "datetime": "2026-05-12 10:14",
-    "tide_height": 0.92,
-    "tide_band": {
-      "min": 0.0,
-      "max": 1.0,
-      "label": "Good",
-      "colour": "#4caf50"
-    },
-    "opw": {
-      "datetime": "2026-05-12 10:15",
-      "level": 0.545,
-      "diff_minutes": 1.0
-    },
-    "opw_band": {
-      "min": 0.0,
-      "max": 0.75,
-      "label": "Too low",
-      "colour": "#d0ccc8"
-    },
-    "overall": {
-      "label": "No wave",
-      "colour": "#d0ccc8"
-    }
-  },
-  {
-    "datetime": "2026-05-12 21:46",
-    "tide_height": 0.99,
-    "tide_band": {
-      "min": 0.0,
-      "max": 1.0,
-      "label": "Good",
-      "colour": "#4caf50"
-    },
-    "opw": {
-      "datetime": "2026-05-12 21:45",
-      "level": 0.536,
-      "diff_minutes": 1.0
-    },
-    "opw_band": {
-      "min": 0.0,
-      "max": 0.75,
-      "label": "Too low",
-      "colour": "#d0ccc8"
-    },
-    "overall": {
-      "label": "No wave",
-      "colour": "#d0ccc8"
-    }
-  },
-  {
-    "datetime": "2026-05-12 22:46",
-    "tide_height": 0.99,
-    "tide_band": {
-      "min": 0.0,
-      "max": 1.0,
-      "label": "Good",
-      "colour": "#4caf50"
-    },
-    "opw": {
-      "datetime": "2026-05-12 22:45",
-      "level": 0.52,
-      "diff_minutes": 1.0
-    },
-    "opw_band": {
-      "min": 0.0,
-      "max": 0.75,
-      "label": "Too low",
-      "colour": "#d0ccc8"
-    },
-    "overall": {
-      "label": "No wave",
-      "colour": "#d0ccc8"
-    }
-  },
-  {
     "datetime": "2026-05-13 10:00",
     "tide_height": 0.72,
     "tide_band": {
@@ -2984,9 +2884,9 @@
       "colour": "#4caf50"
     },
     "opw": {
-      "datetime": "2026-06-11 22:15",
-      "level": 0.69,
-      "diff_minutes": 40.0
+      "datetime": "2026-06-11 22:55",
+      "level": 0.62,
+      "diff_minutes": 0.0
     },
     "opw_band": {
       "min": 0.0,
