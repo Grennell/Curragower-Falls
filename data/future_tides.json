@@ -1,16 +1,5 @@
 [
   {
-    "datetime": "2026-06-17 01:43",
-    "tide_height": 0.2,
-    "tide_band": {
-      "min": 0.0,
-      "max": 1.0,
-      "label": "Good",
-      "colour": "#4caf50"
-    },
-    "is_future": true
-  },
-  {
     "datetime": "2026-06-17 02:43",
     "tide_height": 0.2,
     "tide_band": {
@@ -264,8 +253,8 @@
     "is_future": true
   },
   {
-    "datetime": "2026-06-23 00:47",
-    "tide_height": 0.25,
+    "datetime": "2026-06-23 07:52",
+    "tide_height": 0.87,
     "tide_band": {
       "min": 0.0,
       "max": 1.0,
@@ -275,8 +264,8 @@
     "is_future": true
   },
   {
-    "datetime": "2026-06-23 01:47",
-    "tide_height": 0.25,
+    "datetime": "2026-06-23 08:52",
+    "tide_height": 0.87,
     "tide_band": {
       "min": 0.0,
       "max": 1.0,
@@ -286,8 +275,30 @@
     "is_future": true
   },
   {
-    "datetime": "2026-06-23 13:06",
-    "tide_height": 0.41,
+    "datetime": "2026-06-23 20:24",
+    "tide_height": 1.07,
+    "tide_band": {
+      "min": 1.0,
+      "max": 1.15,
+      "label": "Marginal",
+      "colour": "#f0c070"
+    },
+    "is_future": true
+  },
+  {
+    "datetime": "2026-06-23 21:24",
+    "tide_height": 1.07,
+    "tide_band": {
+      "min": 1.0,
+      "max": 1.15,
+      "label": "Marginal",
+      "colour": "#f0c070"
+    },
+    "is_future": true
+  },
+  {
+    "datetime": "2026-06-24 01:43",
+    "tide_height": 0.2,
     "tide_band": {
       "min": 0.0,
       "max": 1.0,
@@ -297,8 +308,30 @@
     "is_future": true
   },
   {
-    "datetime": "2026-06-23 14:06",
-    "tide_height": 0.41,
+    "datetime": "2026-06-24 02:43",
+    "tide_height": 0.2,
+    "tide_band": {
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
+    },
+    "is_future": true
+  },
+  {
+    "datetime": "2026-06-24 14:04",
+    "tide_height": 0.44,
+    "tide_band": {
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
+    },
+    "is_future": true
+  },
+  {
+    "datetime": "2026-06-24 15:04",
+    "tide_height": 0.44,
     "tide_band": {
       "min": 0.0,
       "max": 1.0,
