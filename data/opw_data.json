@@ -1180,13 +1180,23 @@
     }
   },
   {
-    "datetime": "2026-06-19 15:45",
-    "level": 0.977,
+    "datetime": "2026-06-19 16:00",
+    "level": 0.983,
     "opw_band": {
       "min": 0.88,
       "max": 1.0,
       "label": "Good",
       "colour": "#aed6a8"
+    }
+  },
+  {
+    "datetime": "2026-06-19 17:00",
+    "level": 1.003,
+    "opw_band": {
+      "min": 1.0,
+      "max": 1.12,
+      "label": "Good",
+      "colour": "#81c784"
     }
   }
 ]
