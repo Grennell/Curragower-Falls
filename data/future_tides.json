@@ -1,27 +1,5 @@
 [
   {
-    "datetime": "2026-06-22 19:20",
-    "tide_height": 1.01,
-    "tide_band": {
-      "min": 1.0,
-      "max": 1.15,
-      "label": "Marginal",
-      "colour": "#f0c070"
-    },
-    "is_future": true
-  },
-  {
-    "datetime": "2026-06-22 20:20",
-    "tide_height": 1.01,
-    "tide_band": {
-      "min": 1.0,
-      "max": 1.15,
-      "label": "Marginal",
-      "colour": "#f0c070"
-    },
-    "is_future": true
-  },
-  {
     "datetime": "2026-06-23 07:52",
     "tide_height": 0.87,
     "tide_band": {
