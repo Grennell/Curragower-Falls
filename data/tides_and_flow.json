@@ -2874,5 +2874,18 @@
     "opw": null,
     "opw_band": null,
     "overall": null
+  },
+  {
+    "datetime": "2026-06-26 10:16",
+    "tide_height": 1.0,
+    "tide_band": {
+      "min": 1.0,
+      "max": 1.15,
+      "label": "Marginal",
+      "colour": "#f0c070"
+    },
+    "opw": null,
+    "opw_band": null,
+    "overall": null
   }
 ]
