@@ -264,8 +264,8 @@
     "is_future": true
   },
   {
-    "datetime": "2026-07-10 02:23",
-    "tide_height": 0.61,
+    "datetime": "2026-07-10 08:45",
+    "tide_height": 0.92,
     "tide_band": {
       "min": 0.0,
       "max": 1.0,
@@ -275,8 +275,8 @@
     "is_future": true
   },
   {
-    "datetime": "2026-07-10 03:23",
-    "tide_height": 0.61,
+    "datetime": "2026-07-10 09:45",
+    "tide_height": 0.92,
     "tide_band": {
       "min": 0.0,
       "max": 1.0,
@@ -286,8 +286,8 @@
     "is_future": true
   },
   {
-    "datetime": "2026-07-10 14:36",
-    "tide_height": 0.8,
+    "datetime": "2026-07-10 21:30",
+    "tide_height": 0.96,
     "tide_band": {
       "min": 0.0,
       "max": 1.0,
@@ -297,8 +297,8 @@
     "is_future": true
   },
   {
-    "datetime": "2026-07-10 15:36",
-    "tide_height": 0.8,
+    "datetime": "2026-07-10 22:30",
+    "tide_height": 0.96,
     "tide_band": {
       "min": 0.0,
       "max": 1.0,
