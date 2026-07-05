@@ -1,45 +1,5 @@
 [
   {
-    "datetime": "2026-06-04 02:40",
-    "level": 0.439,
-    "opw_band": {
-      "min": 0.0,
-      "max": 0.75,
-      "label": "Too low",
-      "colour": "#d0ccc8"
-    }
-  },
-  {
-    "datetime": "2026-06-04 03:40",
-    "level": 0.439,
-    "opw_band": {
-      "min": 0.0,
-      "max": 0.75,
-      "label": "Too low",
-      "colour": "#d0ccc8"
-    }
-  },
-  {
-    "datetime": "2026-06-04 14:55",
-    "level": 0.589,
-    "opw_band": {
-      "min": 0.0,
-      "max": 0.75,
-      "label": "Too low",
-      "colour": "#d0ccc8"
-    }
-  },
-  {
-    "datetime": "2026-06-04 15:55",
-    "level": 0.583,
-    "opw_band": {
-      "min": 0.0,
-      "max": 0.75,
-      "label": "Too low",
-      "colour": "#d0ccc8"
-    }
-  },
-  {
     "datetime": "2026-06-05 03:20",
     "level": 0.438,
     "opw_band": {
