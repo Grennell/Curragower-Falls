@@ -998,5 +998,25 @@
       "label": "Too low",
       "colour": "#d0ccc8"
     }
+  },
+  {
+    "datetime": "2026-07-06 17:00",
+    "level": 0.731,
+    "opw_band": {
+      "min": 0.0,
+      "max": 0.75,
+      "label": "Too low",
+      "colour": "#d0ccc8"
+    }
+  },
+  {
+    "datetime": "2026-07-06 17:45",
+    "level": 0.787,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
   }
 ]
