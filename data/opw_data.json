@@ -1,45 +1,5 @@
 [
   {
-    "datetime": "2026-06-12 10:10",
-    "level": 0.54,
-    "opw_band": {
-      "min": 0.0,
-      "max": 0.75,
-      "label": "Too low",
-      "colour": "#d0ccc8"
-    }
-  },
-  {
-    "datetime": "2026-06-12 11:10",
-    "level": 0.832,
-    "opw_band": {
-      "min": 0.75,
-      "max": 0.88,
-      "label": "Low & shallow",
-      "colour": "#f0c070"
-    }
-  },
-  {
-    "datetime": "2026-06-12 22:40",
-    "level": 0.944,
-    "opw_band": {
-      "min": 0.88,
-      "max": 1.0,
-      "label": "Good",
-      "colour": "#aed6a8"
-    }
-  },
-  {
-    "datetime": "2026-06-12 23:40",
-    "level": 0.945,
-    "opw_band": {
-      "min": 0.88,
-      "max": 1.0,
-      "label": "Good",
-      "colour": "#aed6a8"
-    }
-  },
-  {
     "datetime": "2026-06-13 10:55",
     "level": 0.439,
     "opw_band": {
@@ -992,6 +952,26 @@
   {
     "datetime": "2026-07-12 11:40",
     "level": 0.444,
+    "opw_band": {
+      "min": 0.0,
+      "max": 0.75,
+      "label": "Too low",
+      "colour": "#d0ccc8"
+    }
+  },
+  {
+    "datetime": "2026-07-12 23:20",
+    "level": 0.442,
+    "opw_band": {
+      "min": 0.0,
+      "max": 0.75,
+      "label": "Too low",
+      "colour": "#d0ccc8"
+    }
+  },
+  {
+    "datetime": "2026-07-13 00:20",
+    "level": 0.441,
     "opw_band": {
       "min": 0.0,
       "max": 0.75,
