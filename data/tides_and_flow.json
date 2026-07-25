@@ -2718,9 +2718,9 @@
       "colour": "#e57373"
     },
     "opw": {
-      "datetime": "2026-07-25 10:45",
+      "datetime": "2026-07-25 10:55",
       "level": 0.442,
-      "diff_minutes": 8.0
+      "diff_minutes": 2.0
     },
     "opw_band": {
       "min": 0.0,
