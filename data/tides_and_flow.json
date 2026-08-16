@@ -2909,9 +2909,34 @@
       "colour": "#4caf50"
     },
     "opw": {
-      "datetime": "2026-08-16 02:45",
+      "datetime": "2026-08-16 02:50",
       "level": 0.439,
-      "diff_minutes": 3.0
+      "diff_minutes": 2.0
+    },
+    "opw_band": {
+      "min": 0.0,
+      "max": 0.75,
+      "label": "Too low",
+      "colour": "#d0ccc8"
+    },
+    "overall": {
+      "label": "No wave",
+      "colour": "#d0ccc8"
+    }
+  },
+  {
+    "datetime": "2026-08-16 03:48",
+    "tide_height": 0.22,
+    "tide_band": {
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
+    },
+    "opw": {
+      "datetime": "2026-08-16 03:50",
+      "level": 0.439,
+      "diff_minutes": 2.0
     },
     "opw_band": {
       "min": 0.0,
