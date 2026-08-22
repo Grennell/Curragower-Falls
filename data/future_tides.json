@@ -242,8 +242,52 @@
     "is_future": true
   },
   {
-    "datetime": "2026-08-28 06:53",
-    "tide_height": 1.39,
+    "datetime": "2026-08-28 00:27",
+    "tide_height": 0.5,
+    "tide_band": {
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
+    },
+    "is_future": true
+  },
+  {
+    "datetime": "2026-08-28 01:27",
+    "tide_height": 0.5,
+    "tide_band": {
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
+    },
+    "is_future": true
+  },
+  {
+    "datetime": "2026-08-28 12:36",
+    "tide_height": 0.6,
+    "tide_band": {
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
+    },
+    "is_future": true
+  },
+  {
+    "datetime": "2026-08-28 13:36",
+    "tide_height": 0.6,
+    "tide_band": {
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
+    },
+    "is_future": true
+  },
+  {
+    "datetime": "2026-08-29 08:21",
+    "tide_height": 1.5,
     "tide_band": {
       "min": 1.15,
       "max": 99.0,
@@ -253,8 +297,8 @@
     "is_future": true
   },
   {
-    "datetime": "2026-08-28 07:53",
-    "tide_height": 1.39,
+    "datetime": "2026-08-29 09:21",
+    "tide_height": 1.5,
     "tide_band": {
       "min": 1.15,
       "max": 99.0,
@@ -264,8 +308,8 @@
     "is_future": true
   },
   {
-    "datetime": "2026-08-28 20:00",
-    "tide_height": 1.44,
+    "datetime": "2026-08-29 21:19",
+    "tide_height": 1.41,
     "tide_band": {
       "min": 1.15,
       "max": 99.0,
@@ -275,8 +319,8 @@
     "is_future": true
   },
   {
-    "datetime": "2026-08-28 21:00",
-    "tide_height": 1.44,
+    "datetime": "2026-08-29 22:19",
+    "tide_height": 1.41,
     "tide_band": {
       "min": 1.15,
       "max": 99.0,
