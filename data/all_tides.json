@@ -1295,7 +1295,7 @@
       "label": "Too high",
       "colour": "#e57373"
     },
-    "is_future": true
+    "is_future": false
   },
   {
     "datetime": "2026-08-23 22:16",
