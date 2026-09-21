@@ -284,5 +284,49 @@
       "colour": "#4caf50"
     },
     "is_future": true
+  },
+  {
+    "datetime": "2026-09-28 09:12",
+    "tide_height": 1.52,
+    "tide_band": {
+      "min": 1.15,
+      "max": 99.0,
+      "label": "Too high",
+      "colour": "#e57373"
+    },
+    "is_future": true
+  },
+  {
+    "datetime": "2026-09-28 10:12",
+    "tide_height": 1.52,
+    "tide_band": {
+      "min": 1.15,
+      "max": 99.0,
+      "label": "Too high",
+      "colour": "#e57373"
+    },
+    "is_future": true
+  },
+  {
+    "datetime": "2026-09-28 21:53",
+    "tide_height": 1.26,
+    "tide_band": {
+      "min": 1.15,
+      "max": 99.0,
+      "label": "Too high",
+      "colour": "#e57373"
+    },
+    "is_future": true
+  },
+  {
+    "datetime": "2026-09-28 22:53",
+    "tide_height": 1.26,
+    "tide_band": {
+      "min": 1.15,
+      "max": 99.0,
+      "label": "Too high",
+      "colour": "#e57373"
+    },
+    "is_future": true
   }
 ]
