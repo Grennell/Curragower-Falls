@@ -1,27 +1,5 @@
 [
   {
-    "datetime": "2026-09-22 22:33",
-    "tide_height": 1.03,
-    "tide_band": {
-      "min": 1.0,
-      "max": 1.15,
-      "label": "Marginal",
-      "colour": "#f0c070"
-    },
-    "is_future": true
-  },
-  {
-    "datetime": "2026-09-22 23:33",
-    "tide_height": 1.03,
-    "tide_band": {
-      "min": 1.0,
-      "max": 1.15,
-      "label": "Marginal",
-      "colour": "#f0c070"
-    },
-    "is_future": true
-  },
-  {
     "datetime": "2026-09-23 10:45",
     "tide_height": 1.07,
     "tide_band": {
@@ -264,46 +242,46 @@
     "is_future": true
   },
   {
-    "datetime": "2026-09-29 10:08",
-    "tide_height": 1.31,
+    "datetime": "2026-09-29 01:38",
+    "tide_height": 0.31,
     "tide_band": {
-      "min": 1.15,
-      "max": 99.0,
-      "label": "Too high",
-      "colour": "#e57373"
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
     },
     "is_future": true
   },
   {
-    "datetime": "2026-09-29 11:08",
-    "tide_height": 1.31,
+    "datetime": "2026-09-29 02:38",
+    "tide_height": 0.31,
     "tide_band": {
-      "min": 1.15,
-      "max": 99.0,
-      "label": "Too high",
-      "colour": "#e57373"
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
     },
     "is_future": true
   },
   {
-    "datetime": "2026-09-29 22:33",
-    "tide_height": 1.03,
+    "datetime": "2026-09-29 13:59",
+    "tide_height": 0.39,
     "tide_band": {
-      "min": 1.0,
-      "max": 1.15,
-      "label": "Marginal",
-      "colour": "#f0c070"
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
     },
     "is_future": true
   },
   {
-    "datetime": "2026-09-29 23:33",
-    "tide_height": 1.03,
+    "datetime": "2026-09-29 14:59",
+    "tide_height": 0.39,
     "tide_band": {
-      "min": 1.0,
-      "max": 1.15,
-      "label": "Marginal",
-      "colour": "#f0c070"
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
     },
     "is_future": true
   }
