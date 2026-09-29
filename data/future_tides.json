@@ -264,8 +264,30 @@
     "is_future": true
   },
   {
-    "datetime": "2026-10-05 00:58",
-    "tide_height": 0.28,
+    "datetime": "2026-10-05 08:29",
+    "tide_height": 1.29,
+    "tide_band": {
+      "min": 1.15,
+      "max": 99.0,
+      "label": "Too high",
+      "colour": "#e57373"
+    },
+    "is_future": true
+  },
+  {
+    "datetime": "2026-10-05 09:29",
+    "tide_height": 1.29,
+    "tide_band": {
+      "min": 1.15,
+      "max": 99.0,
+      "label": "Too high",
+      "colour": "#e57373"
+    },
+    "is_future": true
+  },
+  {
+    "datetime": "2026-10-05 21:23",
+    "tide_height": 0.95,
     "tide_band": {
       "min": 0.0,
       "max": 1.0,
@@ -275,8 +297,8 @@
     "is_future": true
   },
   {
-    "datetime": "2026-10-05 01:58",
-    "tide_height": 0.28,
+    "datetime": "2026-10-05 22:23",
+    "tide_height": 0.95,
     "tide_band": {
       "min": 0.0,
       "max": 1.0,
@@ -286,8 +308,8 @@
     "is_future": true
   },
   {
-    "datetime": "2026-10-05 13:17",
-    "tide_height": 0.36,
+    "datetime": "2026-10-06 01:38",
+    "tide_height": 0.31,
     "tide_band": {
       "min": 0.0,
       "max": 1.0,
@@ -297,8 +319,30 @@
     "is_future": true
   },
   {
-    "datetime": "2026-10-05 14:17",
-    "tide_height": 0.36,
+    "datetime": "2026-10-06 02:38",
+    "tide_height": 0.31,
+    "tide_band": {
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
+    },
+    "is_future": true
+  },
+  {
+    "datetime": "2026-10-06 13:59",
+    "tide_height": 0.39,
+    "tide_band": {
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
+    },
+    "is_future": true
+  },
+  {
+    "datetime": "2026-10-06 14:59",
+    "tide_height": 0.39,
     "tide_band": {
       "min": 0.0,
       "max": 1.0,
