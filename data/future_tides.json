@@ -1,27 +1,5 @@
 [
   {
-    "datetime": "2026-10-02 03:57",
-    "tide_height": 0.8,
-    "tide_band": {
-      "min": 0.0,
-      "max": 1.0,
-      "label": "Good",
-      "colour": "#4caf50"
-    },
-    "is_future": true
-  },
-  {
-    "datetime": "2026-10-02 04:57",
-    "tide_height": 0.8,
-    "tide_band": {
-      "min": 0.0,
-      "max": 1.0,
-      "label": "Good",
-      "colour": "#4caf50"
-    },
-    "is_future": true
-  },
-  {
     "datetime": "2026-10-02 16:35",
     "tide_height": 0.86,
     "tide_band": {
