@@ -242,8 +242,74 @@
     "is_future": true
   },
   {
-    "datetime": "2026-10-10 05:00",
-    "tide_height": 1.05,
+    "datetime": "2026-10-10 00:00",
+    "tide_height": 0.24,
+    "tide_band": {
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
+    },
+    "is_future": true
+  },
+  {
+    "datetime": "2026-10-10 01:00",
+    "tide_height": 0.24,
+    "tide_band": {
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
+    },
+    "is_future": true
+  },
+  {
+    "datetime": "2026-10-10 12:12",
+    "tide_height": 0.37,
+    "tide_band": {
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
+    },
+    "is_future": true
+  },
+  {
+    "datetime": "2026-10-10 13:12",
+    "tide_height": 0.37,
+    "tide_band": {
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
+    },
+    "is_future": true
+  },
+  {
+    "datetime": "2026-10-11 06:30",
+    "tide_height": 1.27,
+    "tide_band": {
+      "min": 1.15,
+      "max": 99.0,
+      "label": "Too high",
+      "colour": "#e57373"
+    },
+    "is_future": true
+  },
+  {
+    "datetime": "2026-10-11 07:30",
+    "tide_height": 1.27,
+    "tide_band": {
+      "min": 1.15,
+      "max": 99.0,
+      "label": "Too high",
+      "colour": "#e57373"
+    },
+    "is_future": true
+  },
+  {
+    "datetime": "2026-10-11 20:01",
+    "tide_height": 1.12,
     "tide_band": {
       "min": 1.0,
       "max": 1.15,
@@ -253,30 +319,8 @@
     "is_future": true
   },
   {
-    "datetime": "2026-10-10 06:00",
-    "tide_height": 1.05,
-    "tide_band": {
-      "min": 1.0,
-      "max": 1.15,
-      "label": "Marginal",
-      "colour": "#f0c070"
-    },
-    "is_future": true
-  },
-  {
-    "datetime": "2026-10-10 17:58",
-    "tide_height": 1.06,
-    "tide_band": {
-      "min": 1.0,
-      "max": 1.15,
-      "label": "Marginal",
-      "colour": "#f0c070"
-    },
-    "is_future": true
-  },
-  {
-    "datetime": "2026-10-10 18:58",
-    "tide_height": 1.06,
+    "datetime": "2026-10-11 21:01",
+    "tide_height": 1.12,
     "tide_band": {
       "min": 1.0,
       "max": 1.15,
