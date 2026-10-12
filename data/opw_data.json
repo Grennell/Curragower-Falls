@@ -1158,5 +1158,25 @@
       "label": "Low & shallow",
       "colour": "#f0c070"
     }
+  },
+  {
+    "datetime": "2026-10-12 01:00",
+    "level": 0.852,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
+  },
+  {
+    "datetime": "2026-10-12 02:00",
+    "level": 0.851,
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    }
   }
 ]
