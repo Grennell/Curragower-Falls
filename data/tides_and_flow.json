@@ -2948,5 +2948,55 @@
       "label": "No wave",
       "colour": "#d0ccc8"
     }
+  },
+  {
+    "datetime": "2026-10-17 16:47",
+    "tide_height": 1.21,
+    "tide_band": {
+      "min": 1.15,
+      "max": 99.0,
+      "label": "Too high",
+      "colour": "#e57373"
+    },
+    "opw": {
+      "datetime": "2026-10-17 16:45",
+      "level": 0.781,
+      "diff_minutes": 2.0
+    },
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    },
+    "overall": {
+      "label": "Tide too high",
+      "colour": "#e57373"
+    }
+  },
+  {
+    "datetime": "2026-10-17 17:47",
+    "tide_height": 1.21,
+    "tide_band": {
+      "min": 1.15,
+      "max": 99.0,
+      "label": "Too high",
+      "colour": "#e57373"
+    },
+    "opw": {
+      "datetime": "2026-10-17 17:45",
+      "level": 0.832,
+      "diff_minutes": 2.0
+    },
+    "opw_band": {
+      "min": 0.75,
+      "max": 0.88,
+      "label": "Low & shallow",
+      "colour": "#f0c070"
+    },
+    "overall": {
+      "label": "Tide too high",
+      "colour": "#e57373"
+    }
   }
 ]

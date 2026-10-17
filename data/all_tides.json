@@ -1306,7 +1306,7 @@
       "label": "Too high",
       "colour": "#e57373"
     },
-    "is_future": true
+    "is_future": false
   },
   {
     "datetime": "2026-10-17 17:47",
@@ -1317,7 +1317,7 @@
       "label": "Too high",
       "colour": "#e57373"
     },
-    "is_future": true
+    "is_future": false
   },
   {
     "datetime": "2026-10-18 05:07",
