@@ -1,105 +1,5 @@
 [
   {
-    "datetime": "2026-09-27 00:29",
-    "tide_height": 0.32,
-    "tide_band": {
-      "min": 0.0,
-      "max": 1.0,
-      "label": "Good",
-      "colour": "#4caf50"
-    },
-    "opw": {
-      "datetime": "2026-09-27 00:30",
-      "level": 0.439,
-      "diff_minutes": 1.0
-    },
-    "opw_band": {
-      "min": 0.0,
-      "max": 0.75,
-      "label": "Too low",
-      "colour": "#d0ccc8"
-    },
-    "overall": {
-      "label": "No wave",
-      "colour": "#d0ccc8"
-    }
-  },
-  {
-    "datetime": "2026-09-27 01:29",
-    "tide_height": 0.32,
-    "tide_band": {
-      "min": 0.0,
-      "max": 1.0,
-      "label": "Good",
-      "colour": "#4caf50"
-    },
-    "opw": {
-      "datetime": "2026-09-27 01:30",
-      "level": 0.439,
-      "diff_minutes": 1.0
-    },
-    "opw_band": {
-      "min": 0.0,
-      "max": 0.75,
-      "label": "Too low",
-      "colour": "#d0ccc8"
-    },
-    "overall": {
-      "label": "No wave",
-      "colour": "#d0ccc8"
-    }
-  },
-  {
-    "datetime": "2026-09-27 12:41",
-    "tide_height": 0.39,
-    "tide_band": {
-      "min": 0.0,
-      "max": 1.0,
-      "label": "Good",
-      "colour": "#4caf50"
-    },
-    "opw": {
-      "datetime": "2026-09-27 12:40",
-      "level": 0.437,
-      "diff_minutes": 1.0
-    },
-    "opw_band": {
-      "min": 0.0,
-      "max": 0.75,
-      "label": "Too low",
-      "colour": "#d0ccc8"
-    },
-    "overall": {
-      "label": "No wave",
-      "colour": "#d0ccc8"
-    }
-  },
-  {
-    "datetime": "2026-09-27 13:41",
-    "tide_height": 0.39,
-    "tide_band": {
-      "min": 0.0,
-      "max": 1.0,
-      "label": "Good",
-      "colour": "#4caf50"
-    },
-    "opw": {
-      "datetime": "2026-09-27 13:40",
-      "level": 0.439,
-      "diff_minutes": 1.0
-    },
-    "opw_band": {
-      "min": 0.0,
-      "max": 0.75,
-      "label": "Too low",
-      "colour": "#d0ccc8"
-    },
-    "overall": {
-      "label": "No wave",
-      "colour": "#d0ccc8"
-    }
-  },
-  {
     "datetime": "2026-09-28 00:58",
     "tide_height": 0.28,
     "tide_band": {
@@ -2868,6 +2768,31 @@
       "max": 0.88,
       "label": "Low & shallow",
       "colour": "#f0c070"
+    },
+    "overall": {
+      "label": "On",
+      "colour": "#2e7d32"
+    }
+  },
+  {
+    "datetime": "2026-10-28 01:11",
+    "tide_height": 0.33,
+    "tide_band": {
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
+    },
+    "opw": {
+      "datetime": "2026-10-28 01:10",
+      "level": 0.986,
+      "diff_minutes": 1.0
+    },
+    "opw_band": {
+      "min": 0.88,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#aed6a8"
     },
     "overall": {
       "label": "On",

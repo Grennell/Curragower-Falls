@@ -1,49 +1,5 @@
 [
   {
-    "datetime": "2026-09-27 00:29",
-    "tide_height": 0.32,
-    "tide_band": {
-      "min": 0.0,
-      "max": 1.0,
-      "label": "Good",
-      "colour": "#4caf50"
-    },
-    "is_future": false
-  },
-  {
-    "datetime": "2026-09-27 01:29",
-    "tide_height": 0.32,
-    "tide_band": {
-      "min": 0.0,
-      "max": 1.0,
-      "label": "Good",
-      "colour": "#4caf50"
-    },
-    "is_future": false
-  },
-  {
-    "datetime": "2026-09-27 12:41",
-    "tide_height": 0.39,
-    "tide_band": {
-      "min": 0.0,
-      "max": 1.0,
-      "label": "Good",
-      "colour": "#4caf50"
-    },
-    "is_future": false
-  },
-  {
-    "datetime": "2026-09-27 13:41",
-    "tide_height": 0.39,
-    "tide_band": {
-      "min": 0.0,
-      "max": 1.0,
-      "label": "Good",
-      "colour": "#4caf50"
-    },
-    "is_future": false
-  },
-  {
     "datetime": "2026-09-28 00:58",
     "tide_height": 0.28,
     "tide_band": {
@@ -1273,7 +1229,7 @@
       "label": "Good",
       "colour": "#4caf50"
     },
-    "is_future": true
+    "is_future": false
   },
   {
     "datetime": "2026-10-28 13:40",
@@ -1397,8 +1353,19 @@
     "is_future": true
   },
   {
-    "datetime": "2026-11-03 00:33",
-    "tide_height": 0.29,
+    "datetime": "2026-11-03 08:11",
+    "tide_height": 1.18,
+    "tide_band": {
+      "min": 1.15,
+      "max": 99.0,
+      "label": "Too high",
+      "colour": "#e57373"
+    },
+    "is_future": true
+  },
+  {
+    "datetime": "2026-11-03 20:55",
+    "tide_height": 0.85,
     "tide_band": {
       "min": 0.0,
       "max": 1.0,
@@ -1408,8 +1375,19 @@
     "is_future": true
   },
   {
-    "datetime": "2026-11-03 12:53",
-    "tide_height": 0.31,
+    "datetime": "2026-11-04 01:11",
+    "tide_height": 0.33,
+    "tide_band": {
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
+    },
+    "is_future": true
+  },
+  {
+    "datetime": "2026-11-04 13:40",
+    "tide_height": 0.33,
     "tide_band": {
       "min": 0.0,
       "max": 1.0,
