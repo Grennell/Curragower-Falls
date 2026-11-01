@@ -1028,5 +1028,15 @@
       "label": "Good",
       "colour": "#81c784"
     }
+  },
+  {
+    "datetime": "2026-11-01 04:55",
+    "level": 1.1,
+    "opw_band": {
+      "min": 1.0,
+      "max": 1.12,
+      "label": "Good",
+      "colour": "#81c784"
+    }
   }
 ]
