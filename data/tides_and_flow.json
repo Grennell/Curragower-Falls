@@ -2548,5 +2548,30 @@
       "label": "Tide too high",
       "colour": "#e57373"
     }
+  },
+  {
+    "datetime": "2026-11-02 19:40",
+    "tide_height": 0.94,
+    "tide_band": {
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
+    },
+    "opw": {
+      "datetime": "2026-11-02 19:40",
+      "level": 1.095,
+      "diff_minutes": 0.0
+    },
+    "opw_band": {
+      "min": 1.0,
+      "max": 1.12,
+      "label": "Good",
+      "colour": "#81c784"
+    },
+    "overall": {
+      "label": "On",
+      "colour": "#2e7d32"
+    }
   }
 ]
