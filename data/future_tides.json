@@ -1,16 +1,5 @@
 [
   {
-    "datetime": "2026-11-02 06:25",
-    "tide_height": 1.17,
-    "tide_band": {
-      "min": 1.15,
-      "max": 99.0,
-      "label": "Too high",
-      "colour": "#e57373"
-    },
-    "is_future": true
-  },
-  {
     "datetime": "2026-11-02 19:40",
     "tide_height": 0.94,
     "tide_band": {
