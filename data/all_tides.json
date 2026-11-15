@@ -844,7 +844,7 @@
       "label": "Marginal",
       "colour": "#f0c070"
     },
-    "is_future": true
+    "is_future": false
   },
   {
     "datetime": "2026-11-15 16:21",
