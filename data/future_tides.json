@@ -132,8 +132,19 @@
     "is_future": true
   },
   {
-    "datetime": "2026-11-24 05:43",
-    "tide_height": 1.32,
+    "datetime": "2026-11-24 12:03",
+    "tide_height": 0.42,
+    "tide_band": {
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
+    },
+    "is_future": true
+  },
+  {
+    "datetime": "2026-11-25 07:07",
+    "tide_height": 1.35,
     "tide_band": {
       "min": 1.15,
       "max": 99.0,
@@ -143,8 +154,8 @@
     "is_future": true
   },
   {
-    "datetime": "2026-11-24 18:38",
-    "tide_height": 1.19,
+    "datetime": "2026-11-25 20:06",
+    "tide_height": 1.15,
     "tide_band": {
       "min": 1.15,
       "max": 99.0,
