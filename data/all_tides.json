@@ -1,49 +1,5 @@
 [
   {
-    "datetime": "2026-10-22 10:08",
-    "tide_height": 1.07,
-    "tide_band": {
-      "min": 1.0,
-      "max": 1.15,
-      "label": "Marginal",
-      "colour": "#f0c070"
-    },
-    "is_future": false
-  },
-  {
-    "datetime": "2026-10-22 11:08",
-    "tide_height": 1.07,
-    "tide_band": {
-      "min": 1.0,
-      "max": 1.15,
-      "label": "Marginal",
-      "colour": "#f0c070"
-    },
-    "is_future": false
-  },
-  {
-    "datetime": "2026-10-22 22:29",
-    "tide_height": 0.79,
-    "tide_band": {
-      "min": 0.0,
-      "max": 1.0,
-      "label": "Good",
-      "colour": "#4caf50"
-    },
-    "is_future": false
-  },
-  {
-    "datetime": "2026-10-22 23:29",
-    "tide_height": 0.79,
-    "tide_band": {
-      "min": 0.0,
-      "max": 1.0,
-      "label": "Good",
-      "colour": "#4caf50"
-    },
-    "is_future": false
-  },
-  {
     "datetime": "2026-10-23 10:44",
     "tide_height": 0.84,
     "tide_band": {
@@ -723,7 +679,7 @@
       "label": "Good",
       "colour": "#4caf50"
     },
-    "is_future": true
+    "is_future": false
   },
   {
     "datetime": "2026-11-22 10:47",
@@ -847,8 +803,8 @@
     "is_future": true
   },
   {
-    "datetime": "2026-11-28 10:08",
-    "tide_height": 0.91,
+    "datetime": "2026-11-28 02:42",
+    "tide_height": 0.57,
     "tide_band": {
       "min": 0.0,
       "max": 1.0,
@@ -858,8 +814,30 @@
     "is_future": true
   },
   {
-    "datetime": "2026-11-28 22:26",
-    "tide_height": 0.7,
+    "datetime": "2026-11-28 15:24",
+    "tide_height": 0.43,
+    "tide_band": {
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
+    },
+    "is_future": true
+  },
+  {
+    "datetime": "2026-11-29 10:47",
+    "tide_height": 0.72,
+    "tide_band": {
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
+    },
+    "is_future": true
+  },
+  {
+    "datetime": "2026-11-29 23:03",
+    "tide_height": 0.56,
     "tide_band": {
       "min": 0.0,
       "max": 1.0,
