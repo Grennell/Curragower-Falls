@@ -1,80 +1,5 @@
 [
   {
-    "datetime": "2026-10-23 10:44",
-    "tide_height": 0.84,
-    "tide_band": {
-      "min": 0.0,
-      "max": 1.0,
-      "label": "Good",
-      "colour": "#4caf50"
-    },
-    "opw": {
-      "datetime": "2026-10-23 10:45",
-      "level": 0.981,
-      "diff_minutes": 1.0
-    },
-    "opw_band": {
-      "min": 0.88,
-      "max": 1.0,
-      "label": "Good",
-      "colour": "#aed6a8"
-    },
-    "overall": {
-      "label": "On",
-      "colour": "#2e7d32"
-    }
-  },
-  {
-    "datetime": "2026-10-23 11:44",
-    "tide_height": 0.84,
-    "tide_band": {
-      "min": 0.0,
-      "max": 1.0,
-      "label": "Good",
-      "colour": "#4caf50"
-    },
-    "opw": {
-      "datetime": "2026-10-23 11:45",
-      "level": 0.994,
-      "diff_minutes": 1.0
-    },
-    "opw_band": {
-      "min": 0.88,
-      "max": 1.0,
-      "label": "Good",
-      "colour": "#aed6a8"
-    },
-    "overall": {
-      "label": "On",
-      "colour": "#2e7d32"
-    }
-  },
-  {
-    "datetime": "2026-10-23 23:01",
-    "tide_height": 0.59,
-    "tide_band": {
-      "min": 0.0,
-      "max": 1.0,
-      "label": "Good",
-      "colour": "#4caf50"
-    },
-    "opw": {
-      "datetime": "2026-10-23 23:00",
-      "level": 0.98,
-      "diff_minutes": 1.0
-    },
-    "opw_band": {
-      "min": 0.88,
-      "max": 1.0,
-      "label": "Good",
-      "colour": "#aed6a8"
-    },
-    "overall": {
-      "label": "On",
-      "colour": "#2e7d32"
-    }
-  },
-  {
     "datetime": "2026-10-24 00:01",
     "tide_height": 0.59,
     "tide_band": {
@@ -1568,6 +1493,31 @@
       "max": 1.0,
       "label": "Good",
       "colour": "#aed6a8"
+    },
+    "overall": {
+      "label": "On",
+      "colour": "#2e7d32"
+    }
+  },
+  {
+    "datetime": "2026-11-22 23:03",
+    "tide_height": 0.56,
+    "tide_band": {
+      "min": 0.0,
+      "max": 1.0,
+      "label": "Good",
+      "colour": "#4caf50"
+    },
+    "opw": {
+      "datetime": "2026-11-22 23:05",
+      "level": 1.063,
+      "diff_minutes": 2.0
+    },
+    "opw_band": {
+      "min": 1.0,
+      "max": 1.12,
+      "label": "Good",
+      "colour": "#81c784"
     },
     "overall": {
       "label": "On",
